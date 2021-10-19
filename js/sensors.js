@@ -37,7 +37,7 @@ class OrientationSensor {
       return;
     }
 
-    if (this.initial_orientation.beta + this.sensitivity >= event.beta) {
+    if (this.initial_orientation.beta - this.sensitivity >= event.beta) {
       this.handleDirection(Direction.Down);
       this.reset_orientation(event);
       return;
