@@ -4,9 +4,13 @@ import { Direction } from "./utiltities.js";
 
 function handleDirection(direction) {
   let currentActive = this.getActive();
-  if (currentActive === Direction.oposite(direction)) {
-    this.deactivate();
-    return;
+  if (currentActive) {
+    if (currentActive === Direction.oposite(direction)) {
+      this.deactivate();
+      return;
+    } else {
+      // TODO: When wrong direction detected
+    }
   }
 
   this.activate(direction);
