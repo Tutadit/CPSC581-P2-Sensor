@@ -2,7 +2,11 @@ import { getSimon, Direction } from "./simonSays.js";
 import { getOrientationSensor } from "./sensors.js";
 
 function handleDirection(direction) {
-  console.log(direction);
+  if (this.isActive()) {
+    this.deactivate()
+    return;
+  }
+
   this.activate(direction);
 }
 

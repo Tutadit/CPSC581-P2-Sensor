@@ -1,4 +1,4 @@
-import { Direction } from "./simonSays.js";
+import { Direction } from "./utiltities.js"
 
 class OrientationSensor {
   constructor(hanldeDirection) {
@@ -11,44 +11,36 @@ class OrientationSensor {
     this.sensitivity = 5;
   }
 
+  reset_orientation(new_orientation) {
+    this.initial_orientation = {
+      alpha: new_orientation.alpha,
+      beta: new_orientation.beta,
+      gamma: new_orientation.gamma,
+    };
+    this.reset = false;
+  }
+
   handleOrientation(event) {
     if (this.reset) {
-      this.initial_orientation = {
-        alpha: event.alpha,
-        beta: event.beta,
-        gamma: event.gamma,
-      };
-      $("#initial").text(
-        "Alpha:" +
-          Math.round(event.alpha) +
-          "\n" +
-          "Beta:" +
-          Math.round(event.beta) +
-          "\n" +
-          "Gamma:" +
-          Math.round(event.gamma)
-      );
-      this.reset = false;
+      this.reset_orientation();
     }
 
-    $("#current").text(
-      "Alpha:" +
-        Math.round(event.alpha) +
-        "\n" +
-        "Beta:" +
-        Math.round(event.beta) +
-        "\n" +
-        "Gamma:" +
-        Math.round(event.gamma)
-    );
-
     if (this.initial_orientation.gamma + this.sensitivity <= event.gamma) {
-      this.handleDirection(Direction.Left);
+      this.handleDirection(Direction.Right);
+      reset_orientation();
       return;
     }
 
     if (this.initial_orientation.gamma - this.sensitivity >= event.gamma) {
-      this.handleDirection(Direction.Right);
+      this.handleDirection(Direction.Left);
+      reset_orientation();
+      return;
+    }
+
+    if (this.initial_orientation.beta + this.sensitivity <= event.beta) {
+      this.handleDirection(Direction.Down);
+      reset_orientation();
+      return;
     }
   }
 
