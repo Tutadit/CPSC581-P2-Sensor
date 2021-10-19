@@ -1,18 +1,30 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="utf-8" />
+    <title>CPSC581 Project 2 - part 2</title>
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
 
-<head>
-    <meta charset="utf-8">
-    <title>CPSC581 Project 2 - part 2</title>    
-    <link rel="stylesheet" href="/css/style.css">
-</head>
+  <body>
+    <div class="screen lock-screen">
+      <div class="clock">15:44</div>
+      <div>
+        <p>Orientation Levels:</p>
+        <p>Initial:</p>
+        <p id="initial"></p>
+        <p>Current:</p>
+        <p id="current"></p>
+      </div>
 
-<body>
-
-    <p>We start here</p>
+      <div class="simon-options">
+        <div class="simon-option left"></div>
+        <div class="simon-option down"></div>
+        <div class="simon-option right"></div>
+      </div>
+    </div>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script type="text/javascript" src="/js/start.js"></script>
-</body>
-
+    <script type="module" src="/js/start.js"></script>
+  </body>
 </html>

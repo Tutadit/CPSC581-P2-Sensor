@@ -1,7 +1,7 @@
 # CPSC581-P2-Sensor
 CPSC581 Project 2: Design and implement an alternative to "Slide to Unlock" using sensor(s)
 
-## Project of choice: TBD
+## Project of choice: Simon Says
 ## Project site: http://cpsc581.p2.2.osloz.com
 ## Structure:
 
@@ -22,3 +22,5 @@ Anytime a push is made onto the main branch the deployment process clones this r
 ### Make your life easier
 
 If you use *vscode* install [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) extention. It automatically reloads any file you change, very nice.
+
+
