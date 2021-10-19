@@ -8,7 +8,7 @@ function handleDirection(direction) {
 
 $(document).ready(function () {
   let simon = getSimon();
-  let orientationSensor = getOrientationSensor();
+  let orientationSensor = getOrientationSensor(handleDirection);
   $("#getPermision").click(function () {
       orientationSensor.start()
   });  
