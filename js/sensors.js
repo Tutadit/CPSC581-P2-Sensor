@@ -21,7 +21,7 @@ class OrientationSensor {
   }
 
   directionHandler(direction, orientation) {
-    this.handleDirection(Direction.Right);
+    this.handleDirection(direction);
     this.reset_orientation(orientation);
   }
 
