@@ -33,9 +33,7 @@ body {
     background-color:#000;
 }
 
-.hidden {
-    display: none;
-}
+
 
 button#getPermision {
     width:100vw;
@@ -47,6 +45,10 @@ button#getPermision {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.hidden {
+    display: none;
 }
 
 .simon-option.down {
