@@ -22,7 +22,7 @@ class OrientationSensor {
 
   handleOrientation(event) {
     if (this.reset) {
-      this.reset_orientation();
+      this.reset_orientation(event);
     }
 
     if (this.initial_orientation.gamma + this.sensitivity <= event.gamma) {
