@@ -9,11 +9,11 @@ function handleDirection(direction) {
   console.log(Direction.opposite(currentActive))
   if (currentActive) {
     if (currentActive === Direction.opposite(direction)) {
-      this.deactivate();
-      return;
+      this.deactivate();      
     } else {
       // TODO: When wrong direction detected
     }
+    return;
   }
 
   this.activate(direction);
