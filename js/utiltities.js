@@ -3,20 +3,20 @@ export const Direction = {
   Right: "right",
   Down: "down",
   Up: "up",
-  oposite: function (direction) {
-    let oposite = null;
+  opposite: function (direction) {
+    let opposite = null;
     switch (direction) {
       case Direction.Left:
-        oposite = Direction.Right;
+        opposite = Direction.Right;
         break;
       case Direction.Right:
-        oposite = Direction.Left;
+        opposite = Direction.Left;
         break;
       case Direction.Down:
-        oposite = Direction.Up;
+        opposite = Direction.Up;
         break;
       case Direction.Up:
-        oposite = Direction.Down;
+        opposite = Direction.Down;
     }
     return opposite
   },
