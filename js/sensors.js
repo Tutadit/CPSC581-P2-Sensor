@@ -34,12 +34,12 @@ class OrientationSensor {
       this.reset_orientation(event);
     }
 
-    if (this.initial_orientation.gamma + this.sensitivity * 2 <= event.gamma) {
+    if (this.initial_orientation.gamma + this.sensitivity <= event.gamma) {
       this.directionHandler(Direction.Right, event);
       return;
     }
 
-    if (this.initial_orientation.gamma - this.sensitivity * 2 >= event.gamma) {
+    if (this.initial_orientation.gamma - this.sensitivity >= event.gamma) {
       this.directionHandler(Direction.Left, event);
       return;
     }
