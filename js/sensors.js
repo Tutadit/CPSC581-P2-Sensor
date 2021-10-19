@@ -44,12 +44,12 @@ class OrientationSensor {
       return;
     }
 
-    if (this.initial_orientation.beta + this.sensitivity <= event.beta) {
+    if (this.initial_orientation.beta + this.sensitivity * 2 <= event.beta) {
       this.directionHandler(Direction.Down, event);
       return;
     }
 
-    if (this.initial_orientation.beta - this.sensitivity >= event.beta) {
+    if (this.initial_orientation.beta - this.sensitivity * 2 >= event.beta) {
       this.directionHandler(Direction.Up, event);
     }
   }
