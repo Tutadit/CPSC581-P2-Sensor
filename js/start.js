@@ -1,31 +1,11 @@
 import { getSimon, Direction } from "./simonSays.js";
-
-function handleOrientation(event) {
-  console.log("yes");
-  $("#current").text(
-    "Alpha:" +
-      event.alpha +
-      "\n" +
-      "Beta:" +
-      event.beta +
-      "\n" +
-      "Gamma:" +
-      event.gamma
-  );
-}
+import { getOrientationSensor } from "./sensors.js"
 
 $(document).ready(function () {
   let simon = getSimon();
-
+  let orientationSensor = getOrientationSensor();
   $("#getPermision").click(function () {
-    if (
-      DeviceMotionEvent &&
-      typeof DeviceMotionEvent.requestPermission === "function"
-    ) {
-      console.log("here");
-      DeviceMotionEvent.requestPermission();
-    }
-    window.addEventListener("deviceorientation", handleOrientation);
+      orientationSensor.start()
   });
   simon.activate(Direction.Left);
 });

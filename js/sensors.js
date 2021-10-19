@@ -39,12 +39,23 @@ class OrientationSensor {
         event.gamma
     );
   }
+
+  start() {
+    if (
+      DeviceMotionEvent &&
+      typeof DeviceMotionEvent.requestPermission === "function"
+    )
+      DeviceMotionEvent.requestPermission();
+    this.reset = true;
+    this.orientationHandler = this.handleOrientation.bind(this);
+    window.addEventListener("deviceorientation", this.orientationHandler);
+  }
+
+  stop() {
+    window.removeEventListener("deviceorientation", this.orientationHandler);
+  }
 }
 
 export function getOrientationSensor(handleDirection) {
   return new OrientationSensor(handleDirection);
-}
-
-function stopSensor() {
-  window.removeEventListener("deviceorientation", handleOrientation, false);
 }
