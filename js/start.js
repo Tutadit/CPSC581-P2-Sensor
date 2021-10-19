@@ -1,4 +1,4 @@
-import { getSimon, Direction } from "./simonSays.js";
+import { getSimon } from "./simonSays.js";
 import { getOrientationSensor } from "./sensors.js";
 
 function handleDirection(direction) {
