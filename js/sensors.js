@@ -48,7 +48,7 @@ export function getOrientationSensor(handleDirection) {
 }
 
 function handleOrientation(event) {
-    console.log("yes")
+  console.log("yes");
   $("#current").text(
     "Alpha:" +
       event.alpha +
@@ -62,9 +62,7 @@ function handleOrientation(event) {
 }
 
 export function startSensor() {
-    console.log(handleOrientation)
   window.addEventListener("deviceorientation", handleOrientation, false);
-  console.log(window);
 }
 
 function stopSensor() {
