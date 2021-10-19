@@ -60,6 +60,6 @@ class OrientationSensor {
   }
 }
 
-export function getOrientationSensor(handleDirection) {
-  return new OrientationSensor(handleDirection);
+export function getOrientationSensor(handleDirection, orientationSensitivity) {
+  return new OrientationSensor(handleDirection, orientationSensitivity);
 }
