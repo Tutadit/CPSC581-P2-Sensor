@@ -14,7 +14,8 @@ $(document).ready(function () {
   let simon = getSimon();
 
   let directionHandler = handleDirection.bind(simon);
-  let orientationSensor = getOrientationSensor(directionHandler);
+  let orientationSensitivity = 10;
+  let orientationSensor = getOrientationSensor(directionHandler, orientationSensitivity);
   $("#getPermision").click(function () {
     orientationSensor.start();
   });

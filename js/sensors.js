@@ -1,14 +1,14 @@
 import { Direction } from "./utiltities.js"
 
 class OrientationSensor {
-  constructor(hanldeDirection) {
+  constructor(hanldeDirection, sensitivity) {
     this.handleDirection = hanldeDirection;
     this.initial_orientation = {
       alpha: 0,
       gamma: 0,
       beta: 0,
     };
-    this.sensitivity = 5;
+    this.sensitivity = sensitivity;
   }
 
   reset_orientation(new_orientation) {
@@ -37,7 +37,7 @@ class OrientationSensor {
       return;
     }
 
-    if (this.initial_orientation.beta + this.sensitivity <= event.beta) {
+    if (this.initial_orientation.beta + this.sensitivity >= event.beta) {
       this.handleDirection(Direction.Down);
       this.reset_orientation(event);
       return;
