@@ -7,6 +7,7 @@ function handleDirection(direction) {
   console.log(direction)
   console.log(currentActive)
   console.log(Direction.opposite(currentActive))
+  console.log("--")
   if (currentActive) {
     if (currentActive === Direction.opposite(direction)) {
       this.deactivate();      
