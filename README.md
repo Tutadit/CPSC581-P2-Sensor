@@ -39,6 +39,13 @@ If you use *vscode* install [Live Server](https://marketplace.visualstudio.com/i
 #### ```index.html```
 
 * Add image to ```main-screen```, to make it look like the main phone screen
+* Add image to ```lock-screen```, to make it look like the lock screen
+
+### Further TODOS if time permits:
+
+* Integrate a button to change between pasword and no password.
+* Integrate a butten to set the password.
+* Make the clock show current time.
 
 
 ### Division of work
