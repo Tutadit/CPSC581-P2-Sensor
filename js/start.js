@@ -3,8 +3,8 @@ import { getOrientationSensor } from "./sensors.js";
 import { Direction } from "./utiltities.js";
 
 
-const sensitivity_to_active = 20;
-const sensitivity_from_active = 10
+const sensitivity_to_active = 13;
+const sensitivity_from_active = 6;
 
 function handleDirection(direction, orientationSensor) {
   let currentActive = this.getActive();
