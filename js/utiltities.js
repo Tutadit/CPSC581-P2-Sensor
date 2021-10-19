@@ -6,17 +6,17 @@ export const Direction = {
   opposite: function (direction) {
     let opposite = null;
     switch (direction) {
-      case Direction.Left:
-        opposite = Direction.Right;
+      case this.Left:
+        opposite = this.Right;
         break;
-      case Direction.Right:
-        opposite = Direction.Left;
+      case this.Right:
+        opposite = this.Left;
         break;
-      case Direction.Down:
-        opposite = Direction.Up;
+      case this.Down:
+        opposite = this.Up;
         break;
-      case Direction.Up:
-        opposite = Direction.Down;
+      case this.Up:
+        opposite = this.Down;
     }
     return opposite
   },
