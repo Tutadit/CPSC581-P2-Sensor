@@ -1,5 +1,3 @@
-// Request permission for iOS 13+ devices
-
 class OrientationSensor {
   constructor(hanldeDirection) {
     this.handleDirection = hanldeDirection;
@@ -45,23 +43,6 @@ class OrientationSensor {
 
 export function getOrientationSensor(handleDirection) {
   return new OrientationSensor(handleDirection);
-}
-
-export function startSensor() {
-  function handleOrientation(event) {
-    console.log("yes");
-    $("#current").text(
-      "Alpha:" +
-        event.alpha +
-        "\n" +
-        "Beta:" +
-        event.beta +
-        "\n" +
-        "Gamma:" +
-        event.gamma
-    );
-  }
-  window.addEventListener("deviceorientation", handleOrientation, false);
 }
 
 function stopSensor() {
