@@ -7,9 +7,11 @@ import { getOrientationSensor } from "./sensors.js"
 $(document).ready(function () {
   let simon = getSimon();
   function handleDirection(direction) {
-    simon.activate(direction)
+    console.log(direction)
+    this.activate(direction)
   }
-  let orientationSensor = getOrientationSensor(handleDirection);
+  let directionHandler = handleDirection.bind(simon)
+  let orientationSensor = getOrientationSensor(directionHandler);
   $("#getPermision").click(function () {
       orientationSensor.start()
   });  
