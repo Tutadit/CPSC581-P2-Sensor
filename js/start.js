@@ -4,7 +4,6 @@ import { Direction } from "./utiltities.js";
 
 function handleDirection(direction) {
   let currentActive = this.getActive();
-  console.log(direction)
   console.log(currentActive)
   console.log(Direction.opposite(currentActive))
   console.log("--")
