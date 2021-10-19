@@ -20,6 +20,7 @@ class SimonSays {
       Direction.Down,
     ];
     this.current_attempt = [];
+    this.pattern_as_password = false;
   }
 
   reset() {
@@ -74,6 +75,7 @@ class SimonSays {
     // given pattern for the user.
     // I recommend you use setTimeout() ( https://developer.mozilla.org/en-US/docs/Web/API/setTimeout )
     // Use provided this.activateBlocks() and this.deactivateBlocks() functions.
+    // Only play pattern if this.pattern_as_password is false
   }
 
   wrongPattern() {
@@ -84,7 +86,7 @@ class SimonSays {
 
   unlockPhone() {
     // TODO: Unlock the phone,
-    // Use this.blocks.screen_*
+    // Use this.blocks.screen_* and css class: hidden 
   }
 }
 

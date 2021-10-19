@@ -31,6 +31,18 @@ If you use *vscode* install [Live Server](https://marketplace.visualstudio.com/i
 * implement ```playPattern()```
 * implement ```wrongPattern()```
 
-### ```css/```
+#### ```css/```
+
+* style ```simon-option`` to look better
+* style ```main-screen```
+
+#### ```index.html```
+
+* Add image to ```main-screen```, to make it look like the main phone screen
 
 
+### Division of work
+
+* In order to prevent git issues, only one person should be working on a given file at a time. So one can do html and css and the other js.
+
+* Iphones require an https connection to grant motion sensor access. So testing on a local server is quite a hassle for the scope of this project. Lucky for us this project is hosted on a server with ssl enabled for it. So to test changes affecting the motion sensor, you must push your changes and test on production server. Production server should update pretty soon after the push.

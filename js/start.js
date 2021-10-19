@@ -13,7 +13,7 @@ function handleDirection(direction, orientationSensor) {
       this.deactivate();      
       orientationSensor.setSensitivity(sensitivity_to_active)
     } else {
-      // TODO: When wrong direction detected
+      this.wrongPattern()
     }
     return;
   }
@@ -24,18 +24,20 @@ function handleDirection(direction, orientationSensor) {
 
 $(document).ready(function () {
   let simon = getSimon();
-
   let directionHandler = handleDirection.bind(simon);
   let orientationSensor = getOrientationSensor(
     directionHandler,
     sensitivity_to_active
   );
 
-
+  simon.playPattern();
+  
   $("#getPermision").click(function () {
     if (!$(this).hasClass("hidden")) {
       orientationSensor.start();
       $(this).addClass("hidden");
+    } else {
+      simon.playPattern()
     }
   });
 });
