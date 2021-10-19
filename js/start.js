@@ -23,7 +23,7 @@ $(document).ready(function () {
   let simon = getSimon();
 
   let directionHandler = handleDirection.bind(simon);
-  let orientationSensitivity = 10;
+  let orientationSensitivity = 20;
   let orientationSensor = getOrientationSensor(
     directionHandler,
     orientationSensitivity
