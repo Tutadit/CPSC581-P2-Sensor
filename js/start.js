@@ -21,7 +21,7 @@ function startSensor() {
 
 $(document).ready(function () {
   let simon = getSimon();
-  \if (
+  if (
     DeviceMotionEvent &&
     typeof DeviceMotionEvent.requestPermission === "function"
   ) {
