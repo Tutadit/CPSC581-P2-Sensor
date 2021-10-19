@@ -24,19 +24,36 @@ body {
     position: absolute;
     z-index: -1;
     top: 0;
-    left: 0;
+    left: 0;    
 }
 
 .simon-option {
     height:80%;
     width:30px;  
+    background-color:#000;
+}
+
+.hidden {
+    display: none;
+}
+
+button#getPermision {
+    width:100vw;
+    height:100vh;
+    color:#FFF;
+    font-size:14px;
+    background-color:#000;
+    opacity: 0.8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .simon-option.down {
     height:30px;
     width: 80%;
     margin: 0 auto;
-    align-self: end;
+    align-self: flex-end;
 }
 
 .down.active {

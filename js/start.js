@@ -16,7 +16,10 @@ $(document).ready(function () {
   let directionHandler = handleDirection.bind(simon);
   let orientationSensitivity = 10;
   let orientationSensor = getOrientationSensor(directionHandler, orientationSensitivity);
-  $("#getPermision").click(function () {
-    orientationSensor.start();
+  $("#getPermision").click(function () {    
+    if ( !$(this).hasClass("hidden") ) {
+      orientationSensor.start();
+      $(this).addClass("hidden")
+    }
   });
 });
