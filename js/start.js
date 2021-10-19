@@ -16,18 +16,18 @@ function handleOrientation(event) {
 
 function startSensor() {
   // Request permission for iOS 13+ devices
-  if (
+  
+}
+
+$(document).ready(function () {
+  let simon = getSimon();
+  \if (
     DeviceMotionEvent &&
     typeof DeviceMotionEvent.requestPermission === "function"
   ) {
     console.log("here");
     DeviceMotionEvent.requestPermission();
   }
-  window.addEventListener("deviceorientation", handleOrientation, false);
-}
-
-$(document).ready(function () {
-  let simon = getSimon();
-  startSensor();
+  window.addEventListener("deviceorientation", handleOrientation);
   simon.activate(Direction.Left);
 });
