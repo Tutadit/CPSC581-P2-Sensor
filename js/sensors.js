@@ -1,3 +1,5 @@
+import { Direction } from "./simonSays.js";
+
 class OrientationSensor {
   constructor(hanldeDirection) {
     this.handleDirection = hanldeDirection;
@@ -17,26 +19,26 @@ class OrientationSensor {
       };
       $("#initial").text(
         "Alpha:" +
-          event.alpha +
+          Math.round(event.alpha) +
           "\n" +
           "Beta:" +
-          event.beta +
+          Math.round(event.beta) +
           "\n" +
           "Gamma:" +
-          event.gamma
+          Math.round(event.gamma)
       );
       this.reset = false;
     }
 
     $("#current").text(
       "Alpha:" +
-        event.alpha +
+        Math.round(event.alpha) +
         "\n" +
         "Beta:" +
-        event.beta +
+        Math.round(event.beta) +
         "\n" +
         "Gamma:" +
-        event.gamma
+        Math.round(event.gamma)
     );
   }
 
