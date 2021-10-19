@@ -6,24 +6,25 @@ class SimonSays {
             all:$(".simon-option"),
             [Direction.Left]:$(".simon-option.left"),
             [Direction.Right]:$(".simon-option.right"),
-            [Direction.Down]:$(".simon-option.down")
+            [Direction.Down]:$(".simon-option.down"),
+            [Direction.Up]:$(".simon-option.up"),
         }
-        this.active = false;
+        this.active = null;
     }
 
     activate(direction) {
-        this.active = true;
+        this.active = direction;
         let block = this.blocks[direction]
         if (!block) return
         block.addClass("active")
     }
 
     deactivate() {
-        this.active = false;
+        this.active = null;
         this.blocks.all.removeClass("active")
     }
 
-    isActive() {
+    getActive() {
         return this.active
     }
 }

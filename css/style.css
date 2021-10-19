@@ -7,8 +7,9 @@ body {
 .clock {
     width: 100%;
     text-align: center;
-    font-size:44px;
+    font-size:4rem;
     margin-top:40px;
+    color: #000;
 }
 .screen {
     width:100%; 
@@ -27,35 +28,19 @@ body {
     left: 0;    
 }
 
-.simon-option {
-    height:80%;
-    width:30px;  
-    background-color:#000;
-}
-
-
-
-button#getPermision {
-    width:100vw;
-    height:100vh;
-    color:#FFF;
-    font-size:14px;
-    background-color:#000;
-    opacity: 0.8;
+.simon-options.up-down {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
 }
 
-.hidden {
-    display: none !important;
-}
-
-.simon-option.down {
-    height:30px;
+.simon-options.up-down .simon-option {
     width: 80%;
-    margin: 0 auto;
-    align-self: flex-end;
+    height: 30px;
+}
+
+.simon-options.left-right .simon-option {
+    height:80%;
+    width:30px;        
 }
 
 .down.active {
@@ -69,3 +54,27 @@ button#getPermision {
 .right.active {
     background-color: #dd3;
 }
+
+.up.active {
+    background-color: #e65;
+}
+
+button#getPermision {
+    position:absolute;
+    top:0;
+    left:0;
+    width:100vw;
+    height:100vh;
+    color:#FFF;
+    background-color:#000;
+    font-size:3rem;    
+    opacity: 0.67;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hidden {
+    display: none !important;
+}
+
