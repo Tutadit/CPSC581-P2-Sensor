@@ -47,21 +47,20 @@ export function getOrientationSensor(handleDirection) {
   return new OrientationSensor(handleDirection);
 }
 
-function handleOrientation(event) {
-  console.log("yes");
-  $("#current").text(
-    "Alpha:" +
-      event.alpha +
-      "\n" +
-      "Beta:" +
-      event.beta +
-      "\n" +
-      "Gamma:" +
-      event.gamma
-  );
-}
-
 export function startSensor() {
+  function handleOrientation(event) {
+    console.log("yes");
+    $("#current").text(
+      "Alpha:" +
+        event.alpha +
+        "\n" +
+        "Beta:" +
+        event.beta +
+        "\n" +
+        "Gamma:" +
+        event.gamma
+    );
+  }
   window.addEventListener("deviceorientation", handleOrientation, false);
 }
 
