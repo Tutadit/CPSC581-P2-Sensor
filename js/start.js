@@ -5,7 +5,7 @@ import { Direction } from "./utiltities.js";
 function handleDirection(direction) {
   let currentActive = this.getActive();
   if (currentActive) {
-    if (currentActive === Direction.oposite(direction)) {
+    if (currentActive === Direction.opposite(direction)) {
       this.deactivate();
       return;
     } else {
