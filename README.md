@@ -23,4 +23,14 @@ Anytime a push is made onto the main branch the deployment process clones this r
 
 If you use *vscode* install [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) extention. It automatically reloads any file you change, very nice.
 
+### TODOS: 
+
+#### ```js/simonSays.js```:
+
+* implement ```checkAttempt()```
+* implement ```playPattern()```
+* implement ```wrongPattern()```
+
+### ```css/```
+
 
