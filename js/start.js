@@ -2,14 +2,16 @@ import { getSimon } from "./simonSays.js";
 import { getOrientationSensor } from "./sensors.js";
 import { Direction } from "./utiltities.js";
 
-function handleDirection(direction) {
+
+const sensitivity_to_active = 20;
+const sensitivity_from_active = 10
+
+function handleDirection(direction, orientationSensor) {
   let currentActive = this.getActive();
-  console.log(currentActive)
-  console.log(Direction.opposite(currentActive))
-  console.log("--")
   if (currentActive) {
     if (currentActive === Direction.opposite(direction)) {
       this.deactivate();      
+      orientationSensor.setSensitivity(sensitivity_to_active)
     } else {
       // TODO: When wrong direction detected
     }
@@ -17,17 +19,19 @@ function handleDirection(direction) {
   }
 
   this.activate(direction);
+  orientationSensor.setSensitivity(sensitivity_from_active)
 }
 
 $(document).ready(function () {
   let simon = getSimon();
 
   let directionHandler = handleDirection.bind(simon);
-  let orientationSensitivity = 20;
   let orientationSensor = getOrientationSensor(
     directionHandler,
-    orientationSensitivity
+    sensitivity_to_active
   );
+
+
   $("#getPermision").click(function () {
     if (!$(this).hasClass("hidden")) {
       orientationSensor.start();

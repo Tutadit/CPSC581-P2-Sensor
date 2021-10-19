@@ -20,8 +20,12 @@ class OrientationSensor {
     this.reset = false;
   }
 
+  setSensitivity(new_sensitivity) {
+    this.sensitivity = new_sensitivity;
+  }
+
   directionHandler(direction, orientation) {
-    this.handleDirection(direction);
+    this.handleDirection(direction, this);
     this.reset_orientation(orientation);
   }
 
@@ -30,12 +34,12 @@ class OrientationSensor {
       this.reset_orientation(event);
     }
 
-    if (this.initial_orientation.gamma + this.sensitivity <= event.gamma) {
+    if (this.initial_orientation.gamma + this.sensitivity * 2 <= event.gamma) {
       this.directionHandler(Direction.Right, event);
       return;
     }
 
-    if (this.initial_orientation.gamma - this.sensitivity >= event.gamma) {
+    if (this.initial_orientation.gamma - this.sensitivity * 2 >= event.gamma) {
       this.directionHandler(Direction.Left, event);
       return;
     }
