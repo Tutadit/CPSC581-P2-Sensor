@@ -14,6 +14,10 @@ function handleOrientation(event) {
   );
 }
 
+function handleMotion(event) {
+  console.log(event)
+}
+
 function startSensor() {
   // Request permission for iOS 13+ devices
   
@@ -28,6 +32,7 @@ $(document).ready(function () {
     console.log("here");
     DeviceMotionEvent.requestPermission();
   }
+  window.removeEventListener("devicemotion", handleMotion);
   window.addEventListener("deviceorientation", handleOrientation);
   simon.activate(Direction.Left);
 });
