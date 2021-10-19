@@ -42,15 +42,14 @@ class OrientationSensor {
         Math.round(event.gamma)
     );
 
-    if ( this.initial.gamma + this.sensitivity <= event.gamma) {
-      this.handleDirection(Direction.Left)
-      return
+    if (this.initial_orientation.gamma + this.sensitivity <= event.gamma) {
+      this.handleDirection(Direction.Left);
+      return;
     }
 
-    if ( this.initial.gamma - this.sensitivity >= event.gamma) {
-      this.handleDirection(Direction.Right)
+    if (this.initial_orientation.gamma - this.sensitivity >= event.gamma) {
+      this.handleDirection(Direction.Right);
     }
-
   }
 
   start() {
