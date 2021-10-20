@@ -93,6 +93,7 @@ class SimonSays {
       for(var playIndex = 0; playIndex < this.pattern.length; playIndex++){
         setTimeout(function() {
           this.activateBlock(this.pattern[playIndex]);
+          this.message = "test " + playIndex;
         }, 1000);        
         
       }
