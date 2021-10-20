@@ -14,7 +14,7 @@ class SimonSays {
       [Direction.Up]: $(".simon-option.up"),
     };
     this.active = null;
-    this.flag = true;
+    //this.flag = true;
     this.pattern = [
       Direction.Down,
       Direction.Up,
@@ -38,12 +38,10 @@ class SimonSays {
   }
 
   activate(direction) {
-    if (flag) {
       this.active = direction;
       this.activateBlock(direction);
       this.current_attempt = [...this.current_attempt, direction];
       this.checkAttempt();
-    }
     
   }
 
@@ -89,7 +87,7 @@ class SimonSays {
     // I recommend you use setTimeout() ( https://developer.mozilla.org/en-US/docs/Web/API/setTimeout )
     // Use provided this.activateBlocks() and this.deactivateBlocks() functions.
     // Only play pattern if this.pattern_as_password is false
-    this.flag = false;
+    //this.flag = false;
 
     if(!this.pattern_as_password){
       for(var playIndex = 0; playIndex < this.pattern.length; playIndex++){
@@ -100,7 +98,7 @@ class SimonSays {
       }
     }
 
-    this.flag = true;
+    //this.flag = true;
     
   }
 
