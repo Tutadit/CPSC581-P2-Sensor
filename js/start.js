@@ -23,13 +23,14 @@ function handleDirection(direction, orientationSensor) {
 }
 
 $(document).ready(function () {
-
   let simon = getSimon();
   let directionHandler = handleDirection.bind(simon);
   let orientationSensor = getOrientationSensor(
     directionHandler,
     sensitivity_to_active
   );
+
+  simon.playPattern();
   
   $("#getPermision").click(function () {
     if (!$(this).hasClass("hidden")) {
@@ -39,7 +40,4 @@ $(document).ready(function () {
       simon.playPattern()
     }
   });
-
-  simon.playPattern();
-  
 });
