@@ -1,6 +1,7 @@
 import { Direction } from "./utiltities.js";
 
 class SimonSays {
+
   constructor() {
     this.blocks = {
       all: $(".simon-option"),
@@ -13,6 +14,7 @@ class SimonSays {
       [Direction.Up]: $(".simon-option.up"),
     };
     this.active = null;
+    this.flag = true;
     this.pattern = [
       Direction.Down,
       Direction.Up,
@@ -36,10 +38,13 @@ class SimonSays {
   }
 
   activate(direction) {
-    this.active = direction;
-    this.activateBlock(direction);
-    this.current_attempt = [...this.current_attempt, direction];
-    this.checkAttempt();
+    if (flag) {
+      this.active = direction;
+      this.activateBlock(direction);
+      this.current_attempt = [...this.current_attempt, direction];
+      this.checkAttempt();
+    }
+    
   }
 
   deactivateBlocks() {
@@ -68,6 +73,14 @@ class SimonSays {
     //   Use this.wrongPattern()
     // if the pattern matches completely, the phone should unlock. 
     //   Use this.unlockPhone()
+    
+    var curIndex = this.current_attempt.length - 1;
+    if(this.current_attempt[curIndex] !== this.pattern[curIndex]){
+      this.wrongPattern();
+    }
+    if(this.current_attempt.length == this.pattern.length && this.current_attempt[curIndex] == this.pattern[curIndex]){
+      this.unlockPhone();
+    }
   }
 
   playPattern() {
@@ -76,17 +89,34 @@ class SimonSays {
     // I recommend you use setTimeout() ( https://developer.mozilla.org/en-US/docs/Web/API/setTimeout )
     // Use provided this.activateBlocks() and this.deactivateBlocks() functions.
     // Only play pattern if this.pattern_as_password is false
+    this.flag = false;
+
+    if(!this.pattern_as_password){
+      for(var playIndex = 0; playIndex < this.pattern.length; playIndex++){
+        setTimeout(function() {
+          this.activateBlock(this.pattern[playIndex]);
+        }, 1000);        
+        
+      }
+    }
+
+    this.flag = true;
+    
   }
 
   wrongPattern() {
     // TODO: Notify the user that the pattern entered is incorrect.
     // Reset the system. use this.reset()
     // Use this.blocks.message to write a message to user.
+    this.blocks.message = "Incorrect, please try again";
+    this.reset();
   }
 
   unlockPhone() {
     // TODO: Unlock the phone,
     // Use this.blocks.screen_* and css class: hidden 
+    this.blocks.screen_lock.addClass("hidden");
+    this.blocks.screen_main.removeClass("hidden");
   }
 }
 
