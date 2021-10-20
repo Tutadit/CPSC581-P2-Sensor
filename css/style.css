@@ -80,6 +80,7 @@ body {
 
 .up.active {
     background-color: #e65;
+    box-shadow: 120px 80px 40px 20px #e65;
 }
 
 button#getPermision {
