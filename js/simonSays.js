@@ -9,7 +9,7 @@ const sensitivity_from_active = 6;
 class SimonSays {
   constructor(initial_sensitivity = 17) {
     this.inititateBlocks();
-
+    this.inititateButtonHandlers()
     this.active = null;
     //this.flag = true;
     this.pattern = [
@@ -32,6 +32,15 @@ class SimonSays {
     this.playPattern();
   }
 
+  startChangePassword() {
+    this.changing_password = true;
+    this.pattern = false;
+  }
+
+  stopChangePassword() {
+    this.changing_password = false;
+  }
+
   handleOrientation(direction) {
     //
     let currentActive = this.getActive();
@@ -49,6 +58,20 @@ class SimonSays {
     this.orientationSensor.setSensitivity(sensitivity_from_active);
   }
 
+  inititateButtonHandlers() {
+      this.blocks.pw_change.onClick(function() {
+        if (this.changing_password) {
+          this.stopChangePassword()
+          this.blocks.pw_change.text("Change Password")
+        } else {
+          this.startChangePassword()
+          this.blocks.pw_change.text("Done with password")
+        }
+      }.bind(this))
+
+      this.blocks.pattern_replay.onClick(this.playPattern.bind(this));
+  }
+  
   inititateBlocks() {
     this.blocks = {
       all: $(".simon-option"),
@@ -57,6 +80,8 @@ class SimonSays {
       screen_main: $(".main-screen"),
       content:$(".content-cont"),
       pw_toggle: $("#toggle-pw"),
+      pattern_replay: $("replayPattern"),
+      pw_change:$("#changePassword"),
       [Direction.Left]: $(".simon-option.left"),
       [Direction.Right]: $(".simon-option.right"),
       [Direction.Down]: $(".simon-option.down"),
@@ -81,6 +106,12 @@ class SimonSays {
     //this.blocks.message.addClass("hidden");
     this.active = direction;
     this.activateBlock(direction);
+
+    if (this.changing_password) {
+      this.pattern = [...this.pattern, direction]
+      return;
+    }
+
     this.current_attempt = [...this.current_attempt, direction];
     if ( this.current_attempt.length === this.pattern.length )
       this.checkAttempt();

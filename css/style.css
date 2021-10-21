@@ -173,7 +173,7 @@ body {
   background-color: red;
 }
 
-#toggle-pw {
+button.action {
   cursor: pointer;
   height: 7rem;
   width: 70%;
@@ -240,6 +240,9 @@ button#getPermision {
 
 body{
     overflow: hidden;
+}
+
+#replay-pattern img{
 }
 
 /* TODO: Style main-screen */
