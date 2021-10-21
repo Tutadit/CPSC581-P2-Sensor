@@ -78,7 +78,7 @@ class SimonSays {
       this.current_attempt.length === this.pattern.length &&
       this.current_attempt[curIndex] === this.pattern[curIndex]
     ) {
-      this.unlockPhone();
+      setTimeout(this.unlockPhone.bind(this),500);
     }
   }
 
