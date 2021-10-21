@@ -13,7 +13,7 @@ body {
   margin-top: 40px;
   font-family: "Roboto", sans-serif;
   color: #ffffff;
-  text-shadow: 2px 2px 5px #7B7B7A;
+  text-shadow: 2px 2px 5px #7b7b7a;
 }
 
 .screen {
@@ -75,7 +75,6 @@ body {
     rgba(111, 33, 231, 0.8223622212556898) 0%,
     rgba(255, 255, 255, 0) 100%
   );
-  
 }
 
 .left.active {
@@ -105,10 +104,37 @@ body {
   );
 }
 
-.incorrect-attempt {
+.right.incorrect-attempt {
   background: rgb(255, 16, 16);
   background: linear-gradient(
     270deg,
+    rgba(255, 16, 16, 0.9568160027682948) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+}
+
+.left.incorrect-attempt {
+  background: rgb(255, 16, 16);
+  background: linear-gradient(
+    90deg,
+    rgba(255, 16, 16, 0.9568160027682948) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+}
+
+.up.incorrect-attempt {
+  background: rgb(255, 16, 16);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 16, 16, 0.9568160027682948) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+}
+
+.down.incorrect-attempt {
+  background: rgb(255, 16, 16);
+  background: linear-gradient(
+    0deg,
     rgba(255, 16, 16, 0.9568160027682948) 0%,
     rgba(255, 255, 255, 0) 100%
   );
