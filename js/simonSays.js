@@ -94,6 +94,7 @@ class SimonSays {
         const theFunction = function() {
           this.activateBlock(this.pattern[playIndex]);
           this.blocks.message.text("test " + playIndex); 
+          this.deactivateBlocks();
         }
 
         setTimeout(theFunction.bind(this), 1000);        
