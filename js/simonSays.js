@@ -91,7 +91,7 @@ class SimonSays {
 
     if(!this.pattern_as_password){
       for(let playIndex = 0; playIndex < this.pattern.length; playIndex++){
-        const theFunction = function() {
+        const theFunction = function(playIndex) {
           this.activateBlock(this.pattern[playIndex]);
           this.pattern[playIndex].removeClass("active");
           this.blocks.message.text("test " + playIndex); 
