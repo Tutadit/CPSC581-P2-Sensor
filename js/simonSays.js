@@ -25,6 +25,7 @@ class SimonSays {
   }
 
   reset() {
+    this.blocks.message.text("");
     this.active = null;
     this.current_attempt = [];
     this.deactivateBlocks();
@@ -121,8 +122,8 @@ class SimonSays {
     // TODO: Notify the user that the pattern entered is incorrect.
     // Reset the system. use this.reset()
     // Use this.blocks.message to write a message to user.
-    this.blocks.message.text("Incorrect, please try again")
-    this.reset();
+    this.blocks.message.text("Incorrect, please try again");
+    setTimeout(this.reset(), 2000);
   }
 
   unlockPhone() {
