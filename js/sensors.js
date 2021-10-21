@@ -1,14 +1,32 @@
 import { Direction } from "./utiltities.js";
 
 class OrientationSensor {
-  constructor(hanldeDirection, sensitivity) {
-    this.handleDirection = hanldeDirection;
+  constructor(handleDirection, sensitivity) {
+    this.handleIPhonePermission();
+    this.handleDirection = handleDirection;
     this.initial_orientation = {
-      alpha: 0,
       gamma: 0,
       beta: 0,
     };
     this.sensitivity = sensitivity;
+  }
+
+  handleIPhonePermission() {
+    if (
+      !DeviceMotionEvent ||
+      !typeof DeviceMotionEvent.requestPermission === "function"
+    )
+      return;
+
+    $(document).append(
+      "<button id='getPermision'>Tap to grant permision</button>"
+    );
+    $("#getPermision").click(function () {
+      if (!$(this).hasClass("hidden")) {
+        $(this).addClass("hidden");
+        DeviceMotionEvent.requestPermission(); 
+      }
+    });
   }
 
   reset_orientation(new_orientation) {
@@ -25,7 +43,7 @@ class OrientationSensor {
   }
 
   directionHandler(direction, orientation) {
-    this.handleDirection(direction, this);
+    this.handleDirection(direction);
     this.reset_orientation(orientation);
   }
 
@@ -55,11 +73,6 @@ class OrientationSensor {
   }
 
   start() {
-    if (
-      DeviceMotionEvent &&
-      typeof DeviceMotionEvent.requestPermission === "function"
-    )
-      DeviceMotionEvent.requestPermission();
     this.reset = true;
     this.orientationHandler = this.handleOrientation.bind(this);
     window.addEventListener("deviceorientation", this.orientationHandler);

@@ -1,17 +1,15 @@
 import { Direction } from "./utiltities.js";
+import { getOrientationSensor } from "./sensors.js";
+
+
+const sensitivity_to_active = 17;
+const sensitivity_from_active = 6;
+
 
 class SimonSays {
-  constructor() {
-    this.blocks = {
-      all: $(".simon-option"),
-      message: $("#message"),
-      screen_lock: $(".lock-screen"),
-      screen_main: $(".main-screen"),
-      [Direction.Left]: $(".simon-option.left"),
-      [Direction.Right]: $(".simon-option.right"),
-      [Direction.Down]: $(".simon-option.down"),
-      [Direction.Up]: $(".simon-option.up"),
-    };
+  constructor(initial_sensitivity) {
+    this.inititateBlocks();
+
     this.active = null;
     //this.flag = true;
     this.pattern = [
@@ -22,6 +20,43 @@ class SimonSays {
     ];
     this.current_attempt = [];
     this.pattern_as_password = false;
+
+    this.orientationHandler = this.handleOrientation.bind(this);
+    this.orientationSensor = getOrientationSensor(
+      orientationHandler,
+      initial_sensitivity
+    );
+  }
+
+  handleOrientation(direction) {
+    //
+    let currentActive = this.getActive();
+    if (currentActive) {
+      if (currentActive === Direction.opposite(direction)) {
+        this.deactivate();
+        this.orientationSensor.setSensitivity(sensitivity_to_active);
+      } else {
+        //this.wrongPattern()
+      }
+      return;
+    }
+
+    this.activate(direction);
+    this.orientationSensor.setSensitivity(sensitivity_from_active);
+  }
+
+  inititateBlocks() {
+    this.blocks = {
+      all: $(".simon-option"),
+      message: $("#message"),
+      screen_lock: $(".lock-screen"),
+      screen_main: $(".main-screen"),
+      pw_toggle: $("#toggle-pw"),
+      [Direction.Left]: $(".simon-option.left"),
+      [Direction.Right]: $(".simon-option.right"),
+      [Direction.Down]: $(".simon-option.down"),
+      [Direction.Up]: $(".simon-option.up"),
+    };
   }
 
   reset() {
@@ -89,8 +124,7 @@ class SimonSays {
     this.deactivateBlocks();
     if (this.current_active_block_from_pattern === this.pattern.length) {
       clearInterval(this.pattern_interval_id);
-      if (this.patternPlayCallback)
-        this.patternPlayCallback()
+      if (this.patternPlayCallback) this.patternPlayCallback();
       return;
     }
     this.activateBlock(this.pattern[this.current_active_block_from_pattern]);
@@ -122,8 +156,17 @@ class SimonSays {
     // Reset the system. use this.reset()
     // Use this.blocks.message to write a message to user.
     this.blocks.message.text("Incorrect, please try again");
-    setTimeout(function(){this.blocks.message.text("")}.bind(this), 3000);
+    this.blocks.addClass(".incorrect-attempt");
     
+    setTimeout(
+      function () {
+        this.blocks.message.text("");
+        this.blocks.remove(".incorrect-attempt").bind(this);
+        
+      }.bind(this),
+      3000
+    );
+      
     this.reset();
   }
 
