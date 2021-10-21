@@ -94,7 +94,7 @@ class SimonSays {
         const theFunction = function() {
           this.activateBlock(this.pattern[playIndex]);
           this.blocks.message.text("test " + playIndex); 
-          this.deactivateBlocks();
+          this.pattern[playIndex].removeClass("active");
         }
 
         setTimeout(theFunction.bind(this), 1000);        
