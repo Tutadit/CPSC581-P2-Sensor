@@ -97,7 +97,7 @@ class SimonSays {
           this.pattern[playIndex].removeClass("active");
         }
 
-        setTimeout(theFunction.bind(this), 1000);        
+        setTimeout(theFunction.bind(this), 5000);        
         
       }
     }
