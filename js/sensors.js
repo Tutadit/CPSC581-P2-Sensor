@@ -49,6 +49,7 @@ class OrientationSensor {
   }
 
   handleOrientation(event) {
+    console.log("Hahaha")
     if (this.reset) {
       this.reset_orientation(event);
     }
