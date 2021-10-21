@@ -38,7 +38,7 @@ class SimonSays {
 
   activate(direction) {
     // remove red color css class to all blocks
-    this.blocks.message.addClass("hidden");
+    //this.blocks.message.addClass("hidden");
     this.active = direction;
     this.activateBlock(direction);
     this.current_attempt = [...this.current_attempt, direction];
@@ -75,7 +75,7 @@ class SimonSays {
     var curIndex = this.current_attempt.length - 1;
     if (this.current_attempt[curIndex] !== this.pattern[curIndex]) {
       // add red color css class to all blocks
-      setTimeout(this.wrongPattern.bind(this), 5000);
+      setTimeout(this.wrongPattern.bind(this), 500);
     }
     if (
       this.current_attempt.length === this.pattern.length &&
