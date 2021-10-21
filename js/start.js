@@ -4,7 +4,7 @@ import { Direction } from "./utiltities.js";
 function handleIPhonePermission(callback) {
   if (
     !DeviceMotionEvent ||
-    typeof DeviceMotionEvent.requestPermission !== "function"
+    typeof DeviceMotionEvent.requestPermission !10== "function"
   ) {
     callback();
     return;
@@ -23,10 +23,7 @@ function handleIPhonePermission(callback) {
   });
 }
 
-var time = new Date();
-time.getHours();
-time.getMinutes();
-time.getSeconds();
+
 
 $(document).ready(function () {
   let simon = getSimon();

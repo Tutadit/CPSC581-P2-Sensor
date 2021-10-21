@@ -168,8 +168,7 @@ class SimonSays {
         this.blocks.message.text("");
         this.blocks.all.removeClass("incorrect-attempt")
         this.start();
-      }.bind(this),
-      3000
+      }.bind(this)
     );
       
     this.reset();

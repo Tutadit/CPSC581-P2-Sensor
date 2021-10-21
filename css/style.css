@@ -114,16 +114,18 @@ body {
 
 .pw-enabled {
   content: "password enabled";
+  background-color: green;
 }
 
 .pw-disabled {
   content: "pattern enabled";
+  background-color: red;
 }
 
 #toggle-pw {
   cursor: pointer;
-  height: 100px;
-  width: 80%;
+  height: 5rem;
+  width: 60%;
   border-radius: 100px;
   margin-top: 3%;
   border: none;
@@ -132,13 +134,12 @@ body {
 .content-cont {
   display: flex;
   flex-direction: column;
-  height: 50%;
-  width: 80%;
-  justify-content: space-evenly;
+  height: 40%;
+  width: 100%;
+  justify-content: space-between;
   align-items: center;
-  margin: 10% auto;
   border: 2px solid black;
-
+  margin-top: 10%;
   
 }
 
