@@ -55,6 +55,7 @@ class SimonSays {
       message: $("#message"),
       screen_lock: $(".lock-screen"),
       screen_main: $(".main-screen"),
+      content:$(".content-cont"),
       pw_toggle: $("#toggle-pw"),
       [Direction.Left]: $(".simon-option.left"),
       [Direction.Right]: $(".simon-option.right"),
@@ -160,12 +161,12 @@ class SimonSays {
     // Reset the system. use this.reset()
     // Use this.blocks.message to write a message to user.
     this.blocks.message.text("Incorrect, please try again");
-    this.blocks.screen_lock.addClass("shake");
+    this.blocks.content.addClass("shake");
     this.orientationSensor.stop();
     setTimeout(
       function () {
         this.blocks.message.text("");
-        this.blocks.screen_lock.removeClass("shake")
+        this.blocks.content.removeClass("shake")
         this.orientationSensor.start();
       }.bind(this), 1500);
       
