@@ -18,13 +18,14 @@ class OrientationSensor {
     )
       return;
 
-    $(document).append(
-      "<button id='getPermision'>Tap to grant permision</button>"
+    $("<button id='getPermision'>Tap to grant permision</button>").appendTo(
+      document.body
     );
+
     $("#getPermision").click(function () {
       if (!$(this).hasClass("hidden")) {
         $(this).addClass("hidden");
-        DeviceMotionEvent.requestPermission(); 
+        DeviceMotionEvent.requestPermission();
       }
     });
   }
