@@ -9,7 +9,7 @@ body {
 .clock {
   width: 100%;
   text-align: center;
-  font-size: 4rem;
+  font-size: 6rem;
   margin-top: 40px;
   color: #fff;
   font-family: 'Roboto', sans-serif;
@@ -121,24 +121,23 @@ body {
 }
 
 #toggle-pw {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   cursor: pointer;
-  height: 30px;
-  width: 60px;
-  margin: 0 auto;
+  height: 5rem;
+  width: 10rem;
+  border-radius: 5px;
+  margin-top: 3%;
+  border: none;
 }
 
 .content-cont {
   display: flex;
   flex-direction: column;
-  border: 2px solid white;
-  height: 100%;
+  height: 60%;
   width: 60%;
   justify-content: center;
+  align-items: center;
   margin: 0 auto;
+  
 }
 
 button#getPermision {

@@ -34,6 +34,7 @@ class SimonSays {
 
   handleOrientation(direction) {
     //
+    console.log("Here")
     let currentActive = this.getActive();
     if (currentActive) {
       if (currentActive === Direction.opposite(direction)) {
