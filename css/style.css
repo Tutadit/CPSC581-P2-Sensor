@@ -122,22 +122,24 @@ body {
 
 #toggle-pw {
   cursor: pointer;
-  height: 4rem;
+  height: 100px;
   width: 80%;
   border-radius: 100px;
   margin-top: 3%;
   border: none;
+  margin-bottom: 50%;
 }
 
 .content-cont {
   display: flex;
   flex-direction: column;
-  height: 100%;
-  width: 60%;
+  height: 50%;
+  width: 80%;
   justify-content: space-evenly;
   align-items: center;
-  margin: 0 auto;
+  margin: 10% auto;
   border: 2px solid black;
+
   
 }
 
