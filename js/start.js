@@ -9,6 +9,6 @@ time.getSeconds();
 
 $(document).ready(function () {
   let simon = getSimon(); 
-  simon.startSensing(); 
+  simon.start(); 
 });
 

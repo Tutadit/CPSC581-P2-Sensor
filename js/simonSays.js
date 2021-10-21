@@ -28,8 +28,8 @@ class SimonSays {
     );
   }
 
-  startSensing() {
-    this.orientationSensor.start();
+  start() {
+    this.playPattern();
   }
 
   handleOrientation(direction) {
@@ -128,14 +128,14 @@ class SimonSays {
     this.deactivateBlocks();
     if (this.current_active_block_from_pattern === this.pattern.length) {
       clearInterval(this.pattern_interval_id);
-      if (this.patternPlayCallback) this.patternPlayCallback();
+      this.orientationSensor.start();
       return;
     }
     this.activateBlock(this.pattern[this.current_active_block_from_pattern]);
     this.current_active_block_from_pattern++;
   }
 
-  playPattern(callback) {
+  playPattern() {
     // TODO: Use this.pattern and this.blocks to play the
     // given pattern for the user.
     // I recommend you use setTimeout() ( https://developer.mozilla.org/en-US/docs/Web/API/setTimeout )
@@ -143,15 +143,16 @@ class SimonSays {
     // Only play pattern if this.pattern_as_password is false
     //this.flag = false;
 
-    this.patternPlayCallback = callback;
     if (!this.pattern_as_password) {
+      this.orientationSensor.stop();      
       this.current_active_block_from_pattern = 0;
       this.pattern_interval_id = setInterval(
         this.activateCurrentBlockFromPattern.bind(this),
         1000
       );
-    }
-
+      return;
+    } 
+    this.orientationSensor.start();
     //this.flag = true;
   }
 
