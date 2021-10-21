@@ -160,12 +160,12 @@ class SimonSays {
     // Reset the system. use this.reset()
     // Use this.blocks.message to write a message to user.
     this.blocks.message.text("Incorrect, please try again");
-    this.blocks.all.addClass("incorrect-attempt");
+    this.blocks.screen_lock.addClass("shake");
     this.orientationSensor.stop();
     setTimeout(
       function () {
         this.blocks.message.text("");
-        this.blocks.all.removeClass("incorrect-attempt")
+        this.blocks.screen_lock.removeClass("shake")
         this.orientationSensor.start();
       }.bind(this), 1500);
       
