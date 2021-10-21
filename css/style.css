@@ -9,7 +9,7 @@ body {
 .clock {
   width: 100%;
   text-align: center;
-  font-size: 9rem;
+  font-size: 6rem;
   margin-top: 40px;
   font-family: "Roboto", sans-serif;
   color: #ffffff;
@@ -19,6 +19,7 @@ body {
 .screen {
   width: 100%;
   height: 100%;
+  overflow: hidden;
 }
 
 .message-content {
