@@ -30,6 +30,12 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  border: 2px solid white;
+}
+
+#message{
+    color: #ffffff;
+
 }
 
 /* TODO: Style simon-option to animate the transition in background. 
@@ -61,21 +67,25 @@ body {
 .simon-options.up-down .simon-option {
   width: 100%;
   height: 0;
+  opacity: 0;
   transition: height 300ms ease-in;
 }
 
 .simon-options.left-right .simon-option {
   height: 100%;
   width: 0;
-  transition: width 300ms ease-in;
+  opacity:0;
+  transition: width 100ms ease-in;
 }
 
 .simon-options.up-down .simon-option.active {
   height: 16rem;
+  opacity:1;
 }
 
 .simon-options.left-right .simon-option.active {
   width: 16rem;
+  opacity:1;
 }
 
 .down.active {
@@ -117,11 +127,13 @@ body {
 .simon-options.up-down .simon-option.incorrect-attempt {
   width: 80%;
   height: 5rem;
+  opacity:1;
 }
 
-.simon-options.up-down .simon-option.incorrect-attempt {
+.simon-options.left-right .simon-option.incorrect-attempt {
   width: 5rem;
   height: 80%;
+  opacity:1;
 }
 
 .right.incorrect-attempt {
