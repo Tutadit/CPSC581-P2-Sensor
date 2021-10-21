@@ -13,7 +13,7 @@ function handleDirection(direction, orientationSensor) {
       this.deactivate();      
       orientationSensor.setSensitivity(sensitivity_to_active)
     } else {
-      this.wrongPattern()
+      //this.wrongPattern()
     }
     return;
   }
