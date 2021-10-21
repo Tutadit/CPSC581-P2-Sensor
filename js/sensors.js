@@ -44,12 +44,12 @@ class OrientationSensor {
   }
 
   directionHandler(direction, orientation) {
+    console.log(event)
     this.handleDirection(direction);
     this.reset_orientation(orientation);
   }
 
-  handleOrientation(event) {
-    console.log("Hahaha")
+  handleOrientation(event) {    
     if (this.reset) {
       this.reset_orientation(event);
     }
