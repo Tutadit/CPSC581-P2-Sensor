@@ -34,7 +34,7 @@ class SimonSays {
 
   startChangePassword() {
     this.changing_password = true;
-    this.pattern = false;
+    this.pattern = [];
   }
 
   stopChangePassword() {
