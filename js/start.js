@@ -4,7 +4,7 @@ import { Direction } from "./utiltities.js";
 function handleIPhonePermission(callback) {
   if (
     !DeviceMotionEvent ||
-    typeof DeviceMotionEvent.requestPermission !10== "function"
+    typeof DeviceMotionEvent.requestPermission !== "function"
   ) {
     callback();
     return;
