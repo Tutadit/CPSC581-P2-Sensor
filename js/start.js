@@ -29,7 +29,7 @@ $(document).ready(function () {
   let simon = getSimon();
   handleIPhonePermission(
     function () {
-      this.start();
+      //this.start();
     }.bind(simon)
   );
 });
