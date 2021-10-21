@@ -75,8 +75,8 @@ class SimonSays {
       this.wrongPattern();
     }
     if (
-      this.current_attempt.length == this.pattern.length &&
-      this.current_attempt[curIndex] == this.pattern[curIndex]
+      this.current_attempt.length === this.pattern.length &&
+      this.current_attempt[curIndex] === this.pattern[curIndex]
     ) {
       this.unlockPhone();
     }
@@ -84,13 +84,14 @@ class SimonSays {
 
   activateCurrentBlockFromPattern() {
     this.deactivateBlocks();
-    this.activateBlock(this.pattern[this.current_active_block_from_pattern]);
-    this.current_active_block_from_pattern++;
     if (this.current_active_block_from_pattern === this.pattern.length) {
       clearInterval(this.pattern_interval_id);
       if (this.patternPlayCallback)
         this.patternPlayCallback()
+      return;
     }
+    this.activateBlock(this.pattern[this.current_active_block_from_pattern]);
+    this.current_active_block_from_pattern++;
   }
 
   playPattern(callback) {
