@@ -7,7 +7,7 @@ const sensitivity_from_active = 6;
 
 
 class SimonSays {
-  constructor(initial_sensitivity) {
+  constructor(initial_sensitivity = 17) {
     this.inititateBlocks();
 
     this.active = null;

@@ -43,8 +43,7 @@ class OrientationSensor {
     this.sensitivity = new_sensitivity;
   }
 
-  directionHandler(direction, orientation) {
-    console.log(event)
+  directionHandler(direction, orientation) {    
     this.handleDirection(direction);
     this.reset_orientation(orientation);
   }
