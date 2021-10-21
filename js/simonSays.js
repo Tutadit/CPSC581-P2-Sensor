@@ -83,7 +83,7 @@ class SimonSays {
       screen_main: $(".main-screen"),
       content:$(".content-cont"),
       pw_toggle: $("#toggle-pw"),
-      pattern_replay: $("replayPattern"),
+      pattern_replay: $("#replayPattern"),
       pw_change:$("#changePassword"),
       [Direction.Left]: $(".simon-option.left"),
       [Direction.Right]: $(".simon-option.right"),
