@@ -89,13 +89,11 @@ class SimonSays {
     // Only play pattern if this.pattern_as_password is false
     //this.flag = false;
 
-    this.blocks.message.text("message");
-
     if(!this.pattern_as_password){
       for(var playIndex = 0; playIndex < this.pattern.length; playIndex++){
         setTimeout(function() {
           this.activateBlock(this.pattern[playIndex]);
-          this.blocks.message = "test " + playIndex; 
+          this.blocks.message.text("test " + playIndex); 
         }, 1000);        
         
       }
