@@ -86,7 +86,7 @@ class SimonSays {
     this.deactivateBlocks();
     this.activateBlock(this.pattern[this.current_active_block_from_pattern]);
     this.current_active_block_from_pattern++;
-    if (current_active_block_from_pattern === this.pattern.length) {
+    if (this.current_active_block_from_pattern === this.pattern.length) {
       clearInterval(this.pattern_interval_id);
       if (this.patternPlayCallback)
         this.patternPlayCallback()
