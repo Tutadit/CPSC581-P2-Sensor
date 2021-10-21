@@ -1,7 +1,6 @@
 import { Direction } from "./utiltities.js";
 
 class SimonSays {
-
   constructor() {
     this.blocks = {
       all: $(".simon-option"),
@@ -38,11 +37,10 @@ class SimonSays {
   }
 
   activate(direction) {
-      this.active = direction;
-      this.activateBlock(direction);
-      this.current_attempt = [...this.current_attempt, direction];
-      this.checkAttempt();
-    
+    this.active = direction;
+    this.activateBlock(direction);
+    this.current_attempt = [...this.current_attempt, direction];
+    this.checkAttempt();
   }
 
   deactivateBlocks() {
@@ -65,21 +63,32 @@ class SimonSays {
     // tilts their phone. So it need not match this.pattern completely,
     // rather all items in this.current_attempt should match the ones
     // in the pattern.
-    // I recommend you take a look at Array.prototype.reduce() 
+    // I recommend you take a look at Array.prototype.reduce()
     //    ( https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce )
     // if the pattern does not match, the user should be notified.
     //   Use this.wrongPattern()
-    // if the pattern matches completely, the phone should unlock. 
+    // if the pattern matches completely, the phone should unlock.
     //   Use this.unlockPhone()
-    
+
     var curIndex = this.current_attempt.length - 1;
-    if(this.current_attempt[curIndex] !== this.pattern[curIndex]){
+    if (this.current_attempt[curIndex] !== this.pattern[curIndex]) {
       this.wrongPattern();
     }
-    if(this.current_attempt.length == this.pattern.length && this.current_attempt[curIndex] == this.pattern[curIndex]){
+    if (
+      this.current_attempt.length == this.pattern.length &&
+      this.current_attempt[curIndex] == this.pattern[curIndex]
+    ) {
       this.unlockPhone();
     }
   }
+
+  activateCurrentBlockFromPattern() {
+    this.deactivateBlocks()
+    this.activateBlock(this.pattern[this.current_active_block_from_pattern]);
+    this.current_active_block_from_pattern++;
+    if ( current_active_block_from_pattern === this.pattern.length ) 
+      clearInterval(this.pattern_interval_id)
+  };
 
   playPattern() {
     // TODO: Use this.pattern and this.blocks to play the
@@ -89,21 +98,12 @@ class SimonSays {
     // Only play pattern if this.pattern_as_password is false
     //this.flag = false;
 
-    if(!this.pattern_as_password){
-      for(let playIndex = 0; playIndex < this.pattern.length; playIndex++){
-        const theFunction = function() {
-          this.activateBlock(this.pattern[playIndex]);
-          //this.pattern[playIndex].removeClass("active")
-          this.blocks.message.text("test " + playIndex); 
-        }
-
-        setTimeout(theFunction.bind(this), 1000);        
-        
-      }
+    if (!this.pattern_as_password) {
+      this.current_active_block_from_pattern = 0;
+      this.pattern_interval_id = setInterval(this.activateCurrentBlockFromPattern.bind(this), 1000);
     }
 
     //this.flag = true;
-    
   }
 
   wrongPattern() {
@@ -116,7 +116,7 @@ class SimonSays {
 
   unlockPhone() {
     // TODO: Unlock the phone,
-    // Use this.blocks.screen_* and css class: hidden 
+    // Use this.blocks.screen_* and css class: hidden
     this.blocks.screen_lock.addClass("hidden");
     this.blocks.screen_main.removeClass("hidden");
   }
