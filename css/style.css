@@ -237,4 +237,8 @@ button#getPermision {
   height: 100%;
 }
 
+body{
+    overflow: hidden;
+}
+
 /* TODO: Style main-screen */
