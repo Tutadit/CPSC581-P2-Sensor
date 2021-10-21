@@ -38,7 +38,7 @@ class SimonSays {
 
   activate(direction) {
     // remove red color css class to all blocks
-    this.blocks.message.addClass("hidden");
+    //this.blocks.message.addClass("hidden");
     this.active = direction;
     this.activateBlock(direction);
     this.current_attempt = [...this.current_attempt, direction];
