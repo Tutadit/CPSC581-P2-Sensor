@@ -162,7 +162,7 @@ class SimonSays {
     // Use this.blocks.message to write a message to user.
     this.blocks.message.text("Incorrect, please try again");
     this.blocks.all.addClass("incorrect-attempt");
-    this.stop();
+    this.orientationSensor();
     setTimeout(
       function () {
         this.blocks.message.text("");

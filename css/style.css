@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap");
 body {
   width: 100vw;
   height: 100vh;
@@ -11,8 +11,10 @@ body {
   text-align: center;
   font-size: 9rem;
   margin-top: 40px;
-  color: #fff;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
+  color: #ffffff;
+  background: #ffffff;
+  text-shadow: 1px 3px 0 #969696, 1px 13px 5px #aba8a8;
 }
 
 .screen {
@@ -129,6 +131,7 @@ body {
   border-radius: 100px;
   margin-top: 3%;
   border: none;
+  background-color: rgba(255, 255, 255, 0.623);
 }
 
 .content-cont {
@@ -138,9 +141,7 @@ body {
   width: 100%;
   justify-content: space-between;
   align-items: center;
-  border: 2px solid black;
   margin-top: 20%;
-  
 }
 
 button#getPermision {
