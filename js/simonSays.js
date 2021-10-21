@@ -79,8 +79,8 @@ class SimonSays {
       this.blocks.all.addClass("incorrect-attempt");
       setTimeout(function () { 
         this.blocks.all.removeClass("incorrect-attempt");
-    }, 2000)
-      setTimeout(this.wrongPattern.bind(this), 500);
+      }, 2000)
+      setTimeout(this.wrongPattern.bind(this), 5000);
     }
     if (
       this.current_attempt.length === this.pattern.length &&
