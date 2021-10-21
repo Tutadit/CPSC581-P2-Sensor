@@ -22,6 +22,10 @@ function handleDirection(direction, orientationSensor) {
   orientationSensor.setSensitivity(sensitivity_from_active)
 }
 
+function start_sensor() {
+  this.start()
+}
+
 $(document).ready(function () {
   let simon = getSimon();
   let directionHandler = handleDirection.bind(simon);
@@ -30,14 +34,10 @@ $(document).ready(function () {
     sensitivity_to_active
   );
 
-  simon.playPattern();
-  
   $("#getPermision").click(function () {
     if (!$(this).hasClass("hidden")) {
-      orientationSensor.start();
       $(this).addClass("hidden");
-    } else {
-      simon.playPattern()
-    }
+      simon.playPattern(start_sensor.bind(orientationSensor))     
+    } 
   });
 });
