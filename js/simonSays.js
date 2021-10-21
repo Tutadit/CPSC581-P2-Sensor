@@ -121,9 +121,9 @@ class SimonSays {
     // TODO: Notify the user that the pattern entered is incorrect.
     // Reset the system. use this.reset()
     // Use this.blocks.message to write a message to user.
-    this.blocks.message.text("Incorrect, please try again")
+    this.blocks.message.text("Incorrect, please try again");
     setTimeout(function(){
-      this.blocks.message.text("");}, 2000)
+      this.blocks.message.text("");}, 2000);
     this.reset();
   }
 
