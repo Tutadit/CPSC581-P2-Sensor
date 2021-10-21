@@ -81,7 +81,8 @@ class SimonSays {
     this.active = direction;
     this.activateBlock(direction);
     this.current_attempt = [...this.current_attempt, direction];
-    this.checkAttempt();
+    if ( this.current_attempt.length === this.pattern.length )
+      this.checkAttempt();
   }
 
   deactivateBlocks() {
@@ -111,17 +112,15 @@ class SimonSays {
     // if the pattern matches completely, the phone should unlock.
     //   Use this.unlockPhone()
 
-    var curIndex = this.current_attempt.length - 1;
-    if (this.current_attempt[curIndex] !== this.pattern[curIndex]) {
-      // add red color css class to all blocks
-      setTimeout(this.wrongPattern.bind(this), 500);
+    for ( var i = 0; i < this.current_attempt.length; i++ ){
+        if (this.current_attempt[i] !== this.pattern[i]){
+          setTimeout(this.wrongPattern.bind(this), 500);
+          return;
+        }
     }
-    if (
-      this.current_attempt.length === this.pattern.length &&
-      this.current_attempt[curIndex] === this.pattern[curIndex]
-    ) {
-      setTimeout(this.unlockPhone.bind(this), 500);
-    }
+
+    setTimeout(this.unlockPhone.bind(this), 500);
+    
   }
 
   activateCurrentBlockFromPattern() {
