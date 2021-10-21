@@ -13,7 +13,7 @@ body {
   margin-top: 40px;
   font-family: "Roboto", sans-serif;
   color: #ffffff;
-  text-shadow: 1px 3px 0 #969696, 1px 13px 5px #aba8a8;
+  text-shadow: 2px 2px 5px #7B7B7A;
 }
 
 .screen {
@@ -166,7 +166,7 @@ button#getPermision {
 }
 
 .wallpaper {
-  background-image: url("https://wallpaperaccess.com/full/388275.jpg");
+  background-image: url("https://wallpapercave.com/wp/wp3632029.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

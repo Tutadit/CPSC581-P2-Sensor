@@ -167,7 +167,7 @@ class SimonSays {
       function () {
         this.blocks.message.text("");
         this.blocks.all.removeClass("incorrect-attempt")
-        this.start();
+        this.orientationSensor.start();
       }.bind(this)
     );
       
