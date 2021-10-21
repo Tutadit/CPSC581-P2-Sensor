@@ -76,7 +76,7 @@ class SimonSays {
     var curIndex = this.current_attempt.length - 1;
     if (this.current_attempt[curIndex] !== this.pattern[curIndex]) {
       // add red color css class to all blocks
-      setTimeout(this.blocks.all.addClass("incorrect-attempt"), 500);
+      this.blocks.all.addClass("incorrect-attempt");
       setTimeout(this.wrongPattern.bind(this), 500);
     }
     if (
