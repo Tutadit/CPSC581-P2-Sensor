@@ -60,12 +60,12 @@ body {
 
 .simon-options.up-down .simon-option {
   width: 100%;
-  height: 30rem;
+  height: 16rem;
 }
 
 .simon-options.left-right .simon-option {
   height: 100%;
-  width: 30rem;
+  width: 16rem;
 }
 
 .down.active {
@@ -209,7 +209,7 @@ button#getPermision {
     top: 0;
     left: 0;
     z-index: -9;
-    background-color: rgba(0, 0, 0, 0.37);
+    background-color: rgba(0, 0, 0, 0.5);
     width: 100%;
     height: 100%;
 }
