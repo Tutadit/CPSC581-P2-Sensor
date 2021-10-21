@@ -162,7 +162,7 @@ class SimonSays {
     // Reset the system. use this.reset()
     // Use this.blocks.message to write a message to user.
     this.blocks.message.text("Incorrect, please try again");
-    this.blocks.addClass(".incorrect-attempt");
+    this.blocks.all.addClass(".incorrect-attempt");
     
     setTimeout(
       function () {
