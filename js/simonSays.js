@@ -123,6 +123,7 @@ class SimonSays {
     // Use this.blocks.message to write a message to user.
     this.blocks.message.text("Incorrect, please try again");
     setTimeout(function(){this.blocks.message.text("")}.bind(this), 3000);
+    this.reset();
   }
 
   unlockPhone() {
