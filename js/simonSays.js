@@ -59,7 +59,7 @@ class SimonSays {
   }
 
   inititateButtonHandlers() {
-      this.blocks.pw_change.onClick(function() {
+      this.blocks.pw_change.click(function() {
         if (this.changing_password) {
           this.stopChangePassword()
           this.blocks.pw_change.text("Change Password")
@@ -69,7 +69,7 @@ class SimonSays {
         }
       }.bind(this))
 
-      this.blocks.pattern_replay.onClick(this.playPattern.bind(this));
+      this.blocks.pattern_replay.click(this.playPattern.bind(this));
   }
   
   inititateBlocks() {

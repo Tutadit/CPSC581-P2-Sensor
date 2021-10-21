@@ -243,6 +243,7 @@ body{
 }
 
 #replay-pattern img{
+    background-image: url("./Media/replay.png");
 }
 
 /* TODO: Style main-screen */
