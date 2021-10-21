@@ -99,15 +99,24 @@ background: linear-gradient(270deg, rgba(255,16,16,0.9568160027682948) 0%, rgba(
     content: "pattern enabled";
 }
 
-.pw-btn-cont{
-    width: 50%;
-}
 #toggle-pw{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    height: 72px;
+    width: 50px;
+}
+
+#toggle-pt {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    height: 50px;
+    width: 50px;
 }
 
 button#getPermision {
