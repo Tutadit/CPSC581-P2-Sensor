@@ -83,6 +83,10 @@ body {
     box-shadow: 0px 0px 40px 20px #e65;
 }
 
+.incorrect-attempt{
+    background-color: rgb(238, 51, 51);
+}
+
 button#getPermision {
     position:absolute;
     top:0;
