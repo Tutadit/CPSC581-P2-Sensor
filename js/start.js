@@ -5,8 +5,10 @@ function handleIPhonePermission(callback) {
   if (
     !DeviceMotionEvent ||
     !typeof DeviceMotionEvent.requestPermission === "function"
-  )
+  ) {
+    callback();
     return;
+  }
 
   $("<button id='getPermision'>Tap to grant permision</button>").appendTo(
     document.body
@@ -27,9 +29,10 @@ time.getMinutes();
 time.getSeconds();
 
 $(document).ready(function () {
-  let simon = getSimon(); 
-  handleIPhonePermission(function() {
-    this.start();
-  }.bind(simon))
+  let simon = getSimon();
+  handleIPhonePermission(
+    function () {
+      this.start();
+    }.bind(simon)
+  );
 });
-
