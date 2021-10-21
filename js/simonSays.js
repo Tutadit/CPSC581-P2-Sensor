@@ -28,6 +28,10 @@ class SimonSays {
     );
   }
 
+  startSensing() {
+    this.orientationSensor.start();
+  }
+
   handleOrientation(direction) {
     //
     let currentActive = this.getActive();
