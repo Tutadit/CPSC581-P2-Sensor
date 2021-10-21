@@ -91,10 +91,12 @@ class SimonSays {
 
     if(!this.pattern_as_password){
       for(let playIndex = 0; playIndex < this.pattern.length; playIndex++){
-        setTimeout(function() {
+        const theFunction = function() {
           this.activateBlock(this.pattern[playIndex]);
           this.blocks.message.text("test " + playIndex); 
-        }, 1000);        
+        }
+
+        setTimeout(theFunction.bind(this), 1000);        
         
       }
     }
