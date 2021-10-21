@@ -69,7 +69,10 @@ class SimonSays {
         }
       }.bind(this))
 
-      this.blocks.pattern_replay.click(this.playPattern.bind(this));
+      this.blocks.pattern_replay.click(function () {
+        console.log("here")
+        this.playPattern()
+      }.bind(this));
   }
   
   inititateBlocks() {
