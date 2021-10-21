@@ -38,7 +38,7 @@ class SimonSays {
 
   activate(direction) {
     // remove red color css class to all blocks
-    //this.blocks.message.addClass("hidden");
+    this.blocks.message.addClass("hidden");
     this.active = direction;
     this.activateBlock(direction);
     this.current_attempt = [...this.current_attempt, direction];
@@ -121,7 +121,9 @@ class SimonSays {
     // TODO: Notify the user that the pattern entered is incorrect.
     // Reset the system. use this.reset()
     // Use this.blocks.message to write a message to user.
-    this.blocks.message.text("Incorrect, please try again");
+    this.blocks.message.text("Incorrect, please try again")
+    setTimeout(function(){
+      this.blocks.message.text("");}, 2000)
     this.reset();
   }
 
