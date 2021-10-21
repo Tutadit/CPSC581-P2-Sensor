@@ -23,7 +23,7 @@ class SimonSays {
 
     this.orientationHandler = this.handleOrientation.bind(this);
     this.orientationSensor = getOrientationSensor(
-      orientationHandler,
+      this.orientationHandler,
       initial_sensitivity
     );
   }
