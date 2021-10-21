@@ -76,6 +76,7 @@ class OrientationSensor {
   start() {
     this.reset = true;
     this.orientationHandler = this.handleOrientation.bind(this);
+    console.log("There")
     window.addEventListener("deviceorientation", this.orientationHandler);
   }
 
