@@ -25,7 +25,6 @@ class SimonSays {
   }
 
   reset() {
-    this.blocks.message.text("");
     this.active = null;
     this.current_attempt = [];
     this.deactivateBlocks();
@@ -123,7 +122,7 @@ class SimonSays {
     // Reset the system. use this.reset()
     // Use this.blocks.message to write a message to user.
     this.blocks.message.text("Incorrect, please try again");
-    setTimeout(function(){this.blocks.message.text("")}.bind(this), 4000);
+    setTimeout(function(){this.blocks.message.text("")}.bind(this), 3000);
   }
 
   unlockPhone() {
