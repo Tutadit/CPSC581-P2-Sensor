@@ -26,6 +26,10 @@ function start_sensor() {
   this.start()
 }
 
+function stop_sensor(){
+  this.stop();
+}
+
 $(document).ready(function () {
   let simon = getSimon();
   let directionHandler = handleDirection.bind(simon);

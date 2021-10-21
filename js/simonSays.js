@@ -1,4 +1,6 @@
 import { Direction } from "./utiltities.js";
+import { start_sensor } from "./start.js";
+import { stop_sensor } from "./start.js";
 
 class SimonSays {
   constructor() {
@@ -122,7 +124,9 @@ class SimonSays {
     // Reset the system. use this.reset()
     // Use this.blocks.message to write a message to user.
     this.blocks.message.text("Incorrect, please try again");
+    this.stop_sensor();
     setTimeout(function(){this.blocks.message.text("")}.bind(this), 3000);
+    this.start_sensor();
     this.reset();
   }
 
