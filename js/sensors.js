@@ -1,8 +1,7 @@
 import { Direction } from "./utiltities.js";
 
 class OrientationSensor {
-  constructor(handleDirection, sensitivity) {
-    this.handleIPhonePermission();
+  constructor(handleDirection, sensitivity) {    
     this.handleDirection = handleDirection;
     this.initial_orientation = {
       gamma: 0,
@@ -11,24 +10,7 @@ class OrientationSensor {
     this.sensitivity = sensitivity;
   }
 
-  handleIPhonePermission() {
-    if (
-      !DeviceMotionEvent ||
-      !typeof DeviceMotionEvent.requestPermission === "function"
-    )
-      return;
-
-    $("<button id='getPermision'>Tap to grant permision</button>").appendTo(
-      document.body
-    );
-
-    $("#getPermision").click(function () {
-      if (!$(this).hasClass("hidden")) {
-        $(this).addClass("hidden");
-        DeviceMotionEvent.requestPermission();
-      }
-    });
-  }
+  
 
   reset_orientation(new_orientation) {
     this.initial_orientation = {
@@ -76,7 +58,6 @@ class OrientationSensor {
   start() {
     this.reset = true;
     this.orientationHandler = this.handleOrientation.bind(this);
-    console.log("There")
     window.addEventListener("deviceorientation", this.orientationHandler);
   }
 

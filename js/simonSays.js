@@ -34,7 +34,6 @@ class SimonSays {
 
   handleOrientation(direction) {
     //
-    console.log("Here")
     let currentActive = this.getActive();
     if (currentActive) {
       if (currentActive === Direction.opposite(direction)) {
@@ -167,8 +166,7 @@ class SimonSays {
     setTimeout(
       function () {
         this.blocks.message.text("");
-        this.blocks.remove(".incorrect-attempt").bind(this);
-        
+        this.blocks.all.removeClass(".incorrect-attempt")
       }.bind(this),
       3000
     );
