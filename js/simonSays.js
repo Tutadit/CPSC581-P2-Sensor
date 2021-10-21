@@ -60,19 +60,36 @@ class SimonSays {
 
   inititateButtonHandlers() {
       this.blocks.pw_change.click(function() {
+        if (this.blocks.pw_change.hasClass("disabled"))
+          return
         if (this.changing_password) {
           this.stopChangePassword()
           this.blocks.pw_change.text("Change Password")
         } else {
           this.startChangePassword()
-          this.blocks.pw_change.text("Done with password")
+          this.blocks.pw_change.text("Done")
         }
       }.bind(this))
 
       this.blocks.pattern_replay.click(function () {
-        console.log("here")
-        this.playPattern()
+        if (this.blocks.pattern_replay.hasClass("disabled"))
+          return
+        this.playPattern();
       }.bind(this));
+
+      this.blocks.pw_toggle.click(function () {
+        if (this.blocks.pw_toggle.hasClass("disabled"))
+          return
+          
+        this.pattern_as_password = !this.pattern_as_password
+
+        if (this.pattern_as_password)
+          this.blocks.pattern_replay.addClass("disabled")
+        else
+          this.blocks.pattern_replay.removeClass("disabled")
+        this.blocks.pw_toggle.removeClass("on off")
+        this.blocks.pw_toggle.addClass(this.pattern_as_password ? "on" : "off")
+      }.bind(this))
   }
   
   inititateBlocks() {
@@ -82,8 +99,9 @@ class SimonSays {
       screen_lock: $(".lock-screen"),
       screen_main: $(".main-screen"),
       content:$(".content-cont"),
-      pw_toggle: $("#toggle-pw"),
       pattern_replay: $("#replayPattern"),
+      action_button:$(".action-button"),
+      pw_toggle: $("#toggle-pw"),      
       pw_change:$("#changePassword"),
       [Direction.Left]: $(".simon-option.left"),
       [Direction.Right]: $(".simon-option.right"),
@@ -162,7 +180,9 @@ class SimonSays {
     this.deactivateBlocks();
     if (this.current_active_block_from_pattern === this.pattern.length) {
       clearInterval(this.pattern_interval_id);
+      this.blocks.pattern_replay.removeClass("replay-animation");
       this.orientationSensor.start();
+      this.blocks.action_button.removeClass("disabled")
       return;
     }
     this.activateBlock(this.pattern[this.current_active_block_from_pattern]);
@@ -178,8 +198,10 @@ class SimonSays {
     //this.flag = false;
 
     if (!this.pattern_as_password) {
+      this.blocks.pattern_replay.addClass("replay-animation");
       this.orientationSensor.stop();      
       this.current_active_block_from_pattern = 0;
+      this.blocks.action_button.addClass("disabled")
       this.pattern_interval_id = setInterval(
         this.activateCurrentBlockFromPattern.bind(this),
         1000

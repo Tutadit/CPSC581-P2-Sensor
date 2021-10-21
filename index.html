@@ -23,15 +23,20 @@
       <div class="content-cont">
         <div class="clock">15:54</div>
         <div class="message-content">
-          <div id="message" class="message">
-            
-          </div>
+          <div id="message" class="message"></div>
         </div>
-        <button id="replayPattern">
-          <img src="https://img.icons8.com/ios-glyphs/80/ffffff/replay.png"/>
-        </button>
-        <button class="action" id="toggle-pw"></button>
-        <button class="action" id="changePassword">Change Password</button>
+        <div class="actions">
+          <button class="action-button" id="replayPattern">
+            <img src="https://img.icons8.com/ios-glyphs/80/ffffff/replay.png" />
+          </button>
+          <div class="pw-toggle-wrapper">
+            <p>Pattern as password:</p>
+            <button class="action action-button off" id="toggle-pw"></button>
+          </div>
+          <button class="action action-button" id="changePassword">
+            Change Password
+          </button>
+        </div>
       </div>
     </div>
 
