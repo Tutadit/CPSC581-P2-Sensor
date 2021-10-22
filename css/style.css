@@ -384,6 +384,7 @@ button.icon-button.disabled {
 .actions.no-show {
   height: 0;
   opacity: 0;
+  box-shadow:none;
 }
 
 .actions.no-show::before {
