@@ -168,16 +168,6 @@ body {
   }
 }
 
-.pw-enabled {
-  content: "password enabled";
-  background-color: green;
-}
-
-.pw-disabled {
-  content: "pattern enabled";
-  background-color: red;
-}
-
 button.action {
   cursor: pointer;
   height: 7rem;
@@ -253,6 +243,9 @@ body {
 }
 
 #replayPattern {
+  transition: opacity 0.3s; /* Transition should take 0.3s */
+  -webkit-transition: opacity 0.3s; /* Transition should take 0.3s */
+  opacity: 1; /* Set opacity to 1 */
   border: none;
   cursor: pointer;
   background: none;
@@ -261,12 +254,16 @@ body {
 
 #replayPattern.disabled {
   cursor: default;
-  opacity: 0.3;
+  transition: opacity 0.3s; /* Transition should take 0.3s */
+  -webkit-transition: opacity 0.3s; /* Transition should take 0.3s */
+  opacity: 0.3; /* Set opacity to 1 */
 
 }
 
 .replay-animation {
+  
   -webkit-animation: rotating 2s linear infinite;
+  
 }
 
 .actions {
@@ -320,6 +317,7 @@ body {
 .pw-toggle-wrapper button.off {
   -webkit-box-shadow: 0px 0px 11px 0px #000000;
   box-shadow: 0px 0px 11px 0px #000000;
+  
 }
 
 .pw-toggle-wrapper button.on {
@@ -329,6 +327,9 @@ body {
 }
 
 button#changePassword {
+  transition: opacity 0.3s; /* Transition should take 0.3s */
+  -webkit-transition: opacity 0.3s; /* Transition should take 0.3s */
+  opacity: 1; /* Set opacity to 1 */
   font-size: 2.3rem;
   margin:0;
   width:100%;
@@ -340,6 +341,9 @@ button#changePassword {
 button#changePassword.disabled {
   cursor:default;
   color: #666;
+  transition: opacity 0.3s; /* Transition should take 0.3s */
+  -webkit-transition: opacity 0.3s; /* Transition should take 0.3s */
+  opacity: 0.3; /* Set opacity to 1 */
 }
 
 .pw-toggle-wrapper button.disabled {
@@ -359,9 +363,3 @@ button#changePassword.disabled {
   }
 }
 /* TODO: Style main-screen */
-
-@media only screen and (max-width: 600px) {
-    .content-cont{
-        width: 1000%;
-    }
-  }
