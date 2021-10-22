@@ -89,6 +89,7 @@ class SimonSays {
           this.blocks.pattern_replay.removeClass("disabled")
         this.blocks.pw_toggle.removeClass("on off")
         this.blocks.pw_toggle.addClass(this.pattern_as_password ? "on" : "off")
+
       }.bind(this))
   }
   
@@ -101,7 +102,8 @@ class SimonSays {
       content:$(".content-cont"),
       pattern_replay: $("#replayPattern"),
       action_button:$(".action-button"),
-      pw_toggle: $("#toggle-pw"),      
+      pw_toggle: $("#toggle-pw"),
+      toggle_p: $("#toggle-p"),  
       pw_change:$("#changePassword"),
       [Direction.Left]: $(".simon-option.left"),
       [Direction.Right]: $(".simon-option.right"),
