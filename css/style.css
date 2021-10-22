@@ -254,8 +254,9 @@ body {
 
 #replayPattern {
   border: none;
-  background: transparent;
   cursor: pointer;
+  background: none;
+  outline: none;
 }
 
 #replayPattern.disabled {
@@ -274,7 +275,7 @@ body {
   align-items: center;
   justify-content: center;
   position:relative;
-  padding: 12px;
+  padding: 30px;
   background-color: #00000077;
   border-radius: 6px;
 }
@@ -301,7 +302,7 @@ body {
 }
 
 .pw-toggle-wrapper p {
-  font-size: 1.8rem;
+  font-size: 22px;
   color: #fff;
 }
 
@@ -309,8 +310,7 @@ body {
   width: 30px;
   height: 30px;
   margin-left: 40px;
-  border-radius: 400px;
-  font-size: 30px;
+  border-radius: 400px;  
   background-color: #00000078;
   border: 1px solid #FFF;
   text-transform: uppercase;
