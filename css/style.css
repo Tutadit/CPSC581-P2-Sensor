@@ -386,7 +386,7 @@ button.icon-button.disabled {
   opacity: 0;
 }
 
-.actions.no-show button{
+.actions.no-show *{
   display:none
 }
 
