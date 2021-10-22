@@ -303,15 +303,15 @@ body {
 }
 
 .pw-toggle-wrapper p {
-  font-size: 22px;
+  font-size: 2.3rem;
   color: #fff;
 }
 
 .pw-toggle-wrapper button {
-  width: 30px;
-  height: 30px;
+  width: 60px;
+  height: 60px;
   margin-left: 40px;
-  border-radius: 400px;  
+  border-radius: 40px;    
   background-color: #00000078;
   border: 1px solid #FFF;
   text-transform: uppercase;
@@ -329,10 +329,10 @@ body {
 }
 
 button#changePassword {
-  font-size: 1.6rem;
+  font-size: 2.3rem;
   margin:0;
   width:100%;
-  height:40px;
+  height:60px;
   border-radius: 7px;
   background-color: #efefef;
 }
@@ -359,3 +359,9 @@ button#changePassword.disabled {
   }
 }
 /* TODO: Style main-screen */
+
+@media only screen and (max-width: 600px) {
+    .content-cont{
+        width: 1000%;
+    }
+  }

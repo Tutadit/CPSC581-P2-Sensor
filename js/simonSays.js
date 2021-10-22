@@ -2,8 +2,8 @@ import { Direction } from "./utiltities.js";
 import { getOrientationSensor } from "./sensors.js";
 
 
-const sensitivity_to_active = 17;
-const sensitivity_from_active = 6;
+const sensitivity_to_active = 15;
+const sensitivity_from_active = 15;
 
 
 class SimonSays {
