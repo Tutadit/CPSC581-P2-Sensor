@@ -91,6 +91,20 @@ class SimonSays {
         this.blocks.pw_toggle.addClass(this.pattern_as_password ? "on" : "off")
 
       }.bind(this))
+
+      this.blocks.close_actions.click(function() {
+        if (this.blocks.close_actions.hasClass("disabled"))
+          return
+        this.blocks.actions.addClass("no-show")
+        this.blocks.settings.removeClass("hidden")
+      }.bind(this))
+
+      this.blocks.settings.click(function() {
+        if (this.blocks.close_actions.hasClass("disabled"))
+          return
+        this.blocks.actions.removeClass("no-show")
+        this.blocks.settings.addClass("hidden")
+      }.bind(this))
   }
   
   inititateBlocks() {
@@ -105,6 +119,9 @@ class SimonSays {
       pw_toggle: $("#toggle-pw"),
       toggle_p: $("#toggle-p"),  
       pw_change:$("#changePassword"),
+      close_actions:$(".close-actions"),
+      actions:$(".actions"),
+      settings:$(".settings"),
       [Direction.Left]: $(".simon-option.left"),
       [Direction.Right]: $(".simon-option.right"),
       [Direction.Down]: $(".simon-option.down"),
