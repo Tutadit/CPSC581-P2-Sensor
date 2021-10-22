@@ -386,6 +386,10 @@ button.icon-button.disabled {
   opacity: 0;
 }
 
+.actions.no-show::before {
+  opacity: 0;
+  display: none;
+}
 .actions.no-show *{
   display:none
 }
