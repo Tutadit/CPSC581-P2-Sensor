@@ -8,7 +8,22 @@
   </head>
 
   <body>
-    <div class="screen main-screen hidden">
+    <div class="screen main-screen">
+      <div class="setting-cont">
+        <div class="actions no-show">
+          <button class="action-button icon-button close-actions">
+            <i class="fas fa-times"></i>
+          </button>
+          <div class="pw-toggle-wrapper">
+            <p id="toggle-p">Pattern as password:</p>
+            <button class="action action-button off" id="toggle-pw"></button>
+          </div>
+          <button class="action action-button" id="changePassword">
+            Change Password
+          </button>
+        </div>
+      </div>
+
         <div class="phone-col">
           <div class="clock">
           </div>
@@ -19,13 +34,15 @@
             <img src="https://img.icons8.com/color/96/000000/chrome--v1.png"/>
             <img src="https://img.icons8.com/fluency/96/000000/facebook-new.png"/>
             <img src="https://img.icons8.com/color/96/000000/telegram-app--v1.png"/>
-            <img src="https://img.icons8.com/flat-round/88/000000/settings--v1.png"/>
+            <button class="settings" style="background: none; border: none; cursor: pointer;">
+              <img src="https://img.icons8.com/flat-round/88/000000/settings--v1.png"/>
+            </button>
             <img src="https://img.icons8.com/color/96/000000/google-maps.png"/>
             <img src="https://img.icons8.com/fluency/96/000000/spotify.png"/>
           </div>
         </div>
     </div>
-    <div class="screen lock-screen">
+    <div class="screen lock-screen hidden">
       <div class="overlay"></div>
       <div class="wallpaper"></div>
       <div class="simon-options left-right">
@@ -42,24 +59,10 @@
         <div class="message-content">
           <div id="message" class="message"></div>
         </div>
-        <button class="action-button icon-button settings">
-          <i class="fas fa-tools"></i>
+        <button class="action-button" id="replayPattern">
+          <img src="https://img.icons8.com/ios-glyphs/80/ffffff/replay.png" />
         </button>
-        <div class="actions no-show">
-          <button class="action-button icon-button close-actions">
-            <i class="fas fa-times"></i>
-          </button>
-          <button class="action-button" id="replayPattern">
-            <img src="https://img.icons8.com/ios-glyphs/80/ffffff/replay.png" />
-          </button>
-          <div class="pw-toggle-wrapper">
-            <p id="toggle-p">Pattern as password:</p>
-            <button class="action action-button off" id="toggle-pw"></button>
-          </div>
-          <button class="action action-button" id="changePassword">
-            Change Password
-          </button>
-        </div>
+      
       </div>
     </div>
 

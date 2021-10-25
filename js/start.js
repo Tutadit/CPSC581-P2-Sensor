@@ -29,7 +29,11 @@ $(document).ready(function () {
   let simon = getSimon();
   function time(){
     let today = new Date();
-    var time = today.getHours() + ":" + today.getMinutes()
+    if(today.getMinutes() < 10){
+      var time = today.getHours() + ":" + "0" + today.getMinutes()
+    } else{
+      var time = today.getHours() + ":" + today.getMinutes()
+    }
     $(".clock").text(time);
   }
   setInterval(time, 1000);

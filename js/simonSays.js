@@ -103,7 +103,6 @@ class SimonSays {
         if (this.blocks.close_actions.hasClass("disabled"))
           return
         this.blocks.actions.removeClass("no-show")
-        this.blocks.settings.addClass("hidden")
       }.bind(this))
   }
   

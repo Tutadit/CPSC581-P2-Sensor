@@ -359,12 +359,21 @@ button.icon-button.disabled {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  position: relative;
   padding: 30px;
   width: auto;
+  position: absolute;
   background-color: #00000077;
   border-radius: 6px;
   height: 400px;
+}
+
+.setting-cont{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
 }
 
 .actions::before {
