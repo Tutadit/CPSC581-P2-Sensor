@@ -395,6 +395,40 @@ button.icon-button.disabled {
   display: none;
 }
 
+.phone-col{
+  width: 60%;
+  margin: 0 auto;
+  height: 90%;
+
+}
+
+.clock{
+  margin: 0px;
+  padding: 0px;
+  text-align: center;
+  height: 15%;
+  margin-top: 18%;
+}
+
+.app-cont{
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+  grid-template-rows: 1fr, 1fr, 1fr;
+  margin: 0 auto;
+  width: 100%;
+  align-items: center;
+  justify-items: center;
+  margin-top: 0px;
+  height: 50%;
+  
+}
+
+.main-screen{
+  background-image: url("../Media/unlock-screen-wallpaper.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
 @-webkit-keyframes rotating {
   from {
     -webkit-transform: rotate(0deg);

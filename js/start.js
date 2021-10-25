@@ -27,6 +27,12 @@ function handleIPhonePermission(callback) {
 
 $(document).ready(function () {
   let simon = getSimon();
+  function time(){
+    let today = new Date();
+    var time = today.getHours() + ":" + today.getMinutes()
+    $(".clock").text(time);
+  }
+  setInterval(time, 1000);
   handleIPhonePermission(
     function () {
       this.start();
