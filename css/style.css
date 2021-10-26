@@ -361,8 +361,8 @@ button.icon-button.disabled {
   justify-content: center;
   padding: 30px;
   width: auto;
-  position: absolute;
-  background-color: #00000077;
+  position: relative;
+  background-color: #000000bb;
   border-radius: 6px;
   height: 400px;
 }
@@ -374,6 +374,7 @@ button.icon-button.disabled {
   justify-content: center;
   align-items: center;
   position: absolute;
+  z-index: 50;
 }
 
 .actions::before {
@@ -396,11 +397,7 @@ button.icon-button.disabled {
   box-shadow: none;
 }
 
-.actions.no-show::before {
-  opacity: 0;
-  display: none;
-}
-.actions.no-show * {
+.setting-cont.no-show {
   display: none;
 }
 
@@ -422,7 +419,7 @@ button.icon-button.disabled {
 .app-cont{
   display: grid;
   grid-template-columns: 25% 25% 25% 25%;
-  grid-template-rows: 1fr, 1fr, 1fr;
+  grid-template-rows: 1fr, 1fr;
   margin: 0 auto;
   width: 100%;
   align-items: center;
@@ -436,6 +433,24 @@ button.icon-button.disabled {
   background-image: url("../Media/unlock-screen-wallpaper.jpg");
   background-position: center;
   background-size: cover;
+}
+
+.app-bar{
+  display: flex;
+  width: 100%;
+  margin-top: 8%;
+  justify-content: center;
+  align-items: center;
+}
+.app-bar img{
+  margin-right: 5%;
+  margin-left: 5%;
+}
+
+.home-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 @-webkit-keyframes rotating {

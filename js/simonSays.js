@@ -64,7 +64,7 @@ class SimonSays {
           return
         if (this.changing_password) {
           this.stopChangePassword()
-          this.blocks.pw_change.text("Change Password")
+          this.blocks.pw_change.text("Set Pattern")
         } else {
           this.startChangePassword()
           this.blocks.pw_change.text("Done")
@@ -88,21 +88,18 @@ class SimonSays {
         else
           this.blocks.pattern_replay.removeClass("disabled")
         this.blocks.pw_toggle.removeClass("on off")
-        this.blocks.pw_toggle.addClass(this.pattern_as_password ? "on" : "off")
+        this.blocks.pw_toggle.addClass(this.pattern_as_password ? "off" : "on")
 
       }.bind(this))
 
       this.blocks.close_actions.click(function() {
         if (this.blocks.close_actions.hasClass("disabled"))
           return
-        this.blocks.actions.addClass("no-show")
-        this.blocks.settings.removeClass("hidden")
+        this.blocks.actions_wrapper.addClass("no-show")
       }.bind(this))
 
       this.blocks.settings.click(function() {
-        if (this.blocks.close_actions.hasClass("disabled"))
-          return
-        this.blocks.actions.removeClass("no-show")
+        this.blocks.actions_wrapper.removeClass("no-show")
       }.bind(this))
   }
   
@@ -120,6 +117,7 @@ class SimonSays {
       pw_change:$("#changePassword"),
       close_actions:$(".close-actions"),
       actions:$(".actions"),
+      actions_wrapper:$(".setting-cont"),
       settings:$(".settings"),
       [Direction.Left]: $(".simon-option.left"),
       [Direction.Right]: $(".simon-option.right"),

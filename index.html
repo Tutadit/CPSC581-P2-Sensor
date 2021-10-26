@@ -8,18 +8,18 @@
   </head>
 
   <body>
-    <div class="screen main-screen hidden">
-      <div class="setting-cont">
-        <div class="actions no-show">
+    <div class="screen main-screen">
+      <div class="setting-cont no-show">
+        <div class="actions">
           <button class="action-button icon-button close-actions">
             <i class="fas fa-times"></i>
           </button>
           <div class="pw-toggle-wrapper">
-            <p id="toggle-p">Pattern as password:</p>
-            <button class="action action-button off" id="toggle-pw"></button>
+            <p id="toggle-p">Show Pattern:</p>
+            <button class="action action-button on" id="toggle-pw"></button>
           </div>
           <button class="action action-button" id="changePassword">
-            Change Password
+            Set Pattern
           </button>
         </div>
       </div>
@@ -38,11 +38,19 @@
               <img src="https://img.icons8.com/flat-round/88/000000/settings--v1.png"/>
             </button>
             <img src="https://img.icons8.com/color/96/000000/google-maps.png"/>
-            <img src="https://img.icons8.com/fluency/96/000000/spotify.png"/>
+          </div>
+          <div class="home-icon">
+            <img src="https://img.icons8.com/office/16/000000/home--v1.png"/> 
+          </div>
+          <div class="app-bar">
+            <img src="https://img.icons8.com/color/96/000000/apple-phone.png"/>
+            <img src="https://img.icons8.com/fluency/96/000000/camera.png"/>
+            <img src="https://img.icons8.com/bubbles/96/000000/messages-mac.png"/>
+
           </div>
         </div>
     </div>
-    <div class="screen lock-screen">
+    <div class="screen lock-screen hidden">
       <div class="overlay"></div>
       <div class="wallpaper"></div>
       <div class="simon-options left-right">
