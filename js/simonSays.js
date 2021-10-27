@@ -8,6 +8,7 @@ const sensitivity_from_active = 15;
 
 class SimonSays {
   constructor(initial_sensitivity = 17) {
+    //this.checkPage();
     this.inititateBlocks();
     this.inititateButtonHandlers()
     this.active = null;
@@ -26,6 +27,12 @@ class SimonSays {
       this.orientationHandler,
       initial_sensitivity
     );
+  }
+
+  checkPage(){
+    if(!this.screen_main.hasClass("hidden")){
+      this.getOrientationSensor.stop()
+    }
   }
 
   start() {
@@ -59,13 +66,20 @@ class SimonSays {
   }
 
   inititateButtonHandlers() {
+
+      this.blocks.return_to_lockscreen_btn.click(function(){
+        this.blocks.screen_main.addClass("hidden");
+        this.blocks.screen_lock.removeClass("hidden");
+        console.log("here");
+      }.bind(this))
+      
       this.blocks.pw_change.click(function() {
         if (this.blocks.pw_change.hasClass("disabled"))
           return
         if (this.changing_password) {
           this.stopChangePassword()
           this.blocks.pw_change.text("Set Pattern")
-          this.orientationSensor.stop();
+        
           
         } else {
           this.orientationSensor.start();
@@ -122,6 +136,7 @@ class SimonSays {
       toggle_p: $("#toggle-p"),  
       pw_change:$("#changePassword"),
       pw_change_prompt:$(".prompt-text"),
+      return_to_lockscreen_btn:$("#goLockscreen"),
       close_actions:$(".close-actions"),
       actions:$(".actions"),
       actions_wrapper:$(".setting-cont"),

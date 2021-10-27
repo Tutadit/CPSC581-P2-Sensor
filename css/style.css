@@ -302,7 +302,7 @@ body {
   box-shadow: inset 0px 0px 11px 0px #000000;
 }
 
-button#changePassword {
+button#changePassword, button#goLockscreen {
   transition: opacity 0.3s; /* Transition should take 0.3s */
   -webkit-transition: opacity 0.3s; /* Transition should take 0.3s */
   opacity: 1; /* Set opacity to 1 */
@@ -312,6 +312,10 @@ button#changePassword {
   height: 60px;
   border-radius: 7px;
   background-color: #efefef;
+}
+
+button#goLockscreen{
+  margin-top: 10%;
 }
 
 button#changePassword.disabled {
