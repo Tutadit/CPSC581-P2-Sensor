@@ -68,8 +68,9 @@ class SimonSays {
           
         } else {
           this.startChangePassword()
+          //this.playPattern();
+          
           this.blocks.pw_change_prompt.text("Please set a new pattern");
-          this.playPattern();
           this.blocks.pw_change.text("Save")
         }
       }.bind(this))
@@ -216,8 +217,9 @@ class SimonSays {
     // Use provided this.activateBlocks() and this.deactivateBlocks() functions.
     // Only play pattern if this.pattern_as_password is false
     //this.flag = false;
-
+    console.log("here")
     if (!this.pattern_as_password) {
+      console.log("there")
       this.blocks.pattern_replay.addClass("replay-animation");
       this.orientationSensor.stop();      
       this.current_active_block_from_pattern = 0;
