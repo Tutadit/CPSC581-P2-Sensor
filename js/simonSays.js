@@ -69,6 +69,7 @@ class SimonSays {
 
       this.blocks.return_to_lockscreen_btn.click(function(){
         if(!this.blocks.screen_main.hasClass("hidden")){
+          this.getOrientationSensor.stop();
           this.blocks.screen_main.addClass("hidden");
           this.blocks.screen_lock.removeClass("hidden");
         }
