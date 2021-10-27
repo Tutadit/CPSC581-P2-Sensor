@@ -65,11 +65,13 @@ class SimonSays {
         if (this.changing_password) {
           this.stopChangePassword()
           this.blocks.pw_change.text("Set Pattern")
+          this.orientationSensor.stop();
           
         } else {
+          this.orientationSensor.start();
           this.startChangePassword()
           //this.playPattern();
-          
+
           this.blocks.pw_change_prompt.text("Please set a new pattern");
           this.blocks.pw_change.text("Save")
         }
