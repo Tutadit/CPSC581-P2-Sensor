@@ -68,9 +68,10 @@ class SimonSays {
   inititateButtonHandlers() {
 
       this.blocks.return_to_lockscreen_btn.click(function(){
-        this.blocks.screen_main.addClass("hidden");
-        this.blocks.screen_lock.removeClass("hidden");
-        console.log("here");
+        if(!this.blocks.screen_main.hasClass("hidden")){
+          this.blocks.screen_main.addClass("hidden");
+          this.blocks.screen_lock.removeClass("hidden");
+        }
       }.bind(this))
       
       this.blocks.pw_change.click(function() {
