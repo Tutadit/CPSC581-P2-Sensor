@@ -8,7 +8,6 @@ const sensitivity_from_active = 15;
 
 class SimonSays {
   constructor(initial_sensitivity = 17) {
-    //this.checkPage();
     this.inititateBlocks();
     this.inititateButtonHandlers()
     this.active = null;
@@ -27,11 +26,16 @@ class SimonSays {
       this.orientationHandler,
       initial_sensitivity
     );
+
+    this.checkPage();
   }
 
   checkPage(){
-    if(!this.screen_main.hasClass("hidden")){
-      this.getOrientationSensor.stop()
+    // if main page showing
+    if(!this.blocks.screen_main.hasClass("hidden")){
+      this.orientationSensor.stop()
+    } else{
+      this.orientationSensor.start();
     }
   }
 
@@ -69,7 +73,6 @@ class SimonSays {
 
       this.blocks.return_to_lockscreen_btn.click(function(){
         if(!this.blocks.screen_main.hasClass("hidden")){
-          this.getOrientationSensor.stop();
           this.blocks.screen_main.addClass("hidden");
           this.blocks.screen_lock.removeClass("hidden");
         }
