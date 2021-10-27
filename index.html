@@ -8,12 +8,26 @@
   </head>
 
   <body>
-    <div class="screen main-screen">
+    <div class="screen main-screen hidden">
+
+      <div class="simon-options left-right">
+        <div class="simon-option left"></div>
+        <div class="simon-option right"></div>
+      </div>
+      <div class="simon-options up-down">
+        <div class="simon-option up"></div>
+        <div class="simon-option down"></div>
+      </div>
+
+
       <div class="setting-cont no-show">
         <div class="actions">
           <button class="action-button icon-button close-actions">
             <i class="fas fa-times"></i>
           </button>
+          <div class="prompt-text" style="color: white">
+            
+          </div>
           <div class="pw-toggle-wrapper">
             <p id="toggle-p">Show Pattern:</p>
             <button class="action action-button on" id="toggle-pw"></button>
@@ -50,7 +64,7 @@
           </div>
         </div>
     </div>
-    <div class="screen lock-screen hidden">
+    <div class="screen lock-screen">
       <div class="overlay"></div>
       <div class="wallpaper"></div>
       <div class="simon-options left-right">

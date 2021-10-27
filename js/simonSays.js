@@ -65,9 +65,12 @@ class SimonSays {
         if (this.changing_password) {
           this.stopChangePassword()
           this.blocks.pw_change.text("Set Pattern")
+          
         } else {
           this.startChangePassword()
-          this.blocks.pw_change.text("Done")
+          this.blocks.pw_change_prompt.text("Please set a new pattern");
+          this.playPattern();
+          this.blocks.pw_change.text("Save")
         }
       }.bind(this))
 
@@ -115,6 +118,7 @@ class SimonSays {
       pw_toggle: $("#toggle-pw"),
       toggle_p: $("#toggle-p"),  
       pw_change:$("#changePassword"),
+      pw_change_prompt:$(".prompt-text"),
       close_actions:$(".close-actions"),
       actions:$(".actions"),
       actions_wrapper:$(".setting-cont"),
