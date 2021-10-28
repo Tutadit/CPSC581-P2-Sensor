@@ -42,6 +42,7 @@ class SimonSays {
     if (this.pattern.length === 0) 
       this.pattern = this.old_pattern
     this.changing_password = false;
+    this.orientationSensor.stop();
   }
 
   handleOrientation(direction) {
