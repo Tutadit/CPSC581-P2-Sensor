@@ -68,6 +68,7 @@ class SimonSays {
         if(!this.blocks.screen_main.hasClass("hidden")){
           this.blocks.screen_main.addClass("hidden");
           this.blocks.screen_lock.removeClass("hidden");
+          this.blocks.actions_wrapper.addClass("no-show")
           this.orientationSensor.start();
           this.reset()
         }
