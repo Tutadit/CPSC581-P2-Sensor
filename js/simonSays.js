@@ -27,7 +27,7 @@ class SimonSays {
       initial_sensitivity
     );
 
-    this.checkPage();
+    //this.checkPage();
   }
 
   checkPage(){
@@ -278,6 +278,8 @@ class SimonSays {
     // Use this.blocks.screen_* and css class: hidden
     this.blocks.screen_lock.addClass("hidden");
     this.blocks.screen_main.removeClass("hidden");
+    this.orientationSensor.stop();
+    this.reset();
   }
 }
 
