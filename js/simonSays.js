@@ -34,10 +34,13 @@ class SimonSays {
 
   startChangePassword() {
     this.changing_password = true;
+    this.old_pattern = this.pattern
     this.pattern = [];
   }
 
-  stopChangePassword() {
+  stopChangePassword() { 
+    if (this.pattern.length === 0) 
+      this.pattern = this.old_pattern
     this.changing_password = false;
   }
 
@@ -64,6 +67,7 @@ class SimonSays {
         if(!this.blocks.screen_main.hasClass("hidden")){
           this.blocks.screen_main.addClass("hidden");
           this.blocks.screen_lock.removeClass("hidden");
+          this.reset()
         }
       }.bind(this))
       
