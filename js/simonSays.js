@@ -26,17 +26,6 @@ class SimonSays {
       this.orientationHandler,
       initial_sensitivity
     );
-
-    //this.checkPage();
-  }
-
-  checkPage(){
-    // if main page showing
-    if(!this.blocks.screen_main.hasClass("hidden")){
-      this.orientationSensor.stop()
-    } else{
-      this.orientationSensor.start();
-    }
   }
 
   start() {
@@ -83,7 +72,10 @@ class SimonSays {
           return
         if (this.changing_password) {
           this.stopChangePassword()
+          this.blocks.pw_change_prompt.text("Pattern saved!")
           this.blocks.pw_change.text("Set Pattern")
+          setTimeout(function(){
+            this.blocks.pw_change_prompt.text("")}.bind(this), 3500)
         
           
         } else {
@@ -121,6 +113,8 @@ class SimonSays {
         if (this.blocks.close_actions.hasClass("disabled"))
           return
         this.blocks.actions_wrapper.addClass("no-show")
+        this.blocks.pw_change_prompt.text("");
+
       }.bind(this))
 
       this.blocks.settings.click(function() {
